@@ -1,0 +1,120 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with role-based access information, approval status, and company membership",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 200 },
+        "role": { "type": "string", "enum": ["admin", "advisor", "associate"] },
+        "approvalStatus": { "type": "string", "enum": ["approved", "pending", "denied", "revoked", "disabled"] },
+        "approvedAt": { "type": "string", "maxLength": 50 },
+        "approvedBy": { "type": "string", "maxLength": 128 },
+        "deniedAt": { "type": "string", "maxLength": 50 },
+        "deniedBy": { "type": "string", "maxLength": 128 },
+        "avatar": { "type": "string", "maxLength": 500 },
+        "title": { "type": "string", "maxLength": 100 },
+        "department": { "type": "string", "maxLength": 100 },
+        "companyId": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "name", "email", "role", "approvalStatus"]
+    },
+    "Lead": {
+      "title": "Lead",
+      "description": "Financial services client deal or prospective client record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 120 },
+        "company": { "type": "string", "maxLength": 150 },
+        "email": { "type": "string", "maxLength": 200 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "website": { "type": "string", "maxLength": 255 },
+        "service": { "type": "string", "maxLength": 100 },
+        "status": { "type": "string", "enum": ["New", "Contacted", "Qualified", "Converted"] },
+        "source": { "type": "string", "maxLength": 100 },
+        "acquisitionUrl": { "type": "string", "maxLength": 300 },
+        "estimatedMonthlyRetainer": { "type": "number" },
+        "estimatedARR": { "type": "number" },
+        "notes": { "type": "array" },
+        "initialNotes": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "lastContactDate": { "type": "string", "maxLength": 50 },
+        "followUpDate": { "type": "string", "maxLength": 50 },
+        "assignedAdvisorId": { "type": "string", "maxLength": 128 },
+        "assignedAdvisorName": { "type": "string", "maxLength": 120 },
+        "avatar": { "type": "string", "maxLength": 500 },
+        "companyId": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["id", "name", "company", "status", "estimatedMonthlyRetainer"]
+    },
+    "FollowUp": {
+      "title": "FollowUp",
+      "description": "Scheduled client interaction or review item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "leadId": { "type": "string", "maxLength": 128 },
+        "leadName": { "type": "string", "maxLength": 120 },
+        "leadCompany": { "type": "string", "maxLength": 150 },
+        "leadAvatar": { "type": "string", "maxLength": 500 },
+        "dueTime": { "type": "string", "maxLength": 80 },
+        "dueDate": { "type": "string", "maxLength": 50 },
+        "bucket": { "type": "string", "enum": ["today", "upcoming", "completed"] },
+        "priority": { "type": "string", "enum": ["High Priority", "Standard", "High Value", "Discovery", "In Pipeline"] },
+        "actionSummary": { "type": "string", "maxLength": 500 },
+        "proposalAmount": { "type": "string", "maxLength": 50 },
+        "service": { "type": "string", "maxLength": 100 },
+        "leadStatus": { "type": "string", "maxLength": 50 },
+        "completed": { "type": "boolean" },
+        "completedAt": { "type": "string", "maxLength": 50 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 200 },
+        "companyId": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["id", "leadId", "leadName", "dueTime", "priority", "completed"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "Automated email notification or transaction alert",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "type": { "type": "string", "maxLength": 50 },
+        "recipientEmail": { "type": "string", "maxLength": 200 },
+        "recipientName": { "type": "string", "maxLength": 120 },
+        "subject": { "type": "string", "maxLength": 250 },
+        "preview": { "type": "string", "maxLength": 300 },
+        "body": { "type": "string", "maxLength": 5000 },
+        "relatedLeadId": { "type": "string", "maxLength": 128 },
+        "leadName": { "type": "string", "maxLength": 120 },
+        "status": { "type": "string", "enum": ["sent", "delivered"] },
+        "timestamp": { "type": "string", "maxLength": 50 },
+        "read": { "type": "boolean" },
+        "companyId": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["id", "type", "recipientEmail", "subject", "body"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "#/entities/User",
+      "description": "Registered CRM team members and roles"
+    },
+    "/leads/{leadId}": {
+      "schema": "#/entities/Lead",
+      "description": "Financial CRM leads with stage and value tracking"
+    },
+    "/followups/{followupId}": {
+      "schema": "#/entities/FollowUp",
+      "description": "Scheduled follow-up communications and deadlines"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "#/entities/Notification",
+      "description": "Automated email notifications and system audit log"
+    }
+  }
+}

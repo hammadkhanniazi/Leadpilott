@@ -1,0 +1,7 @@
+{
+  "name": "LeadPilot - Financial Services CRM",
+  "description": "Enterprise-grade financial services CRM with real-time multi-device database sync, role-based access control, automated email alerts, and KPI reporting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

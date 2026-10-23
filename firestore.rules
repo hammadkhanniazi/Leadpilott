@@ -1,0 +1,186 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default-deny all unmapped collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Diagnostic connection verification endpoint
+    match /test/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Securely designated initial administrator
+    function isBootstrappedAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'sanwalniaxii321@gmail.com'
+      );
+    }
+
+    // Administrator permission check (requires approved status)
+    function isAdmin() {
+      return isSignedIn() && (
+        isBootstrappedAdmin() ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.approvalStatus == 'approved')
+      );
+    }
+
+    // Explicitly approved team member check
+    function isApprovedUser() {
+      return isSignedIn() && (
+        isBootstrappedAdmin() ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.approvalStatus == 'approved')
+      );
+    }
+
+    function getUserCompany() {
+      return exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+             'companyId' in get(/databases/$(database)/documents/users/$(request.auth.uid)).data
+        ? get(/databases/$(database)/documents/users/$(request.auth.uid)).data.companyId
+        : 'firm-leadpilot';
+    }
+
+    function matchesUserCompany(data) {
+      return !('companyId' in data) || data.companyId == getUserCompany() || isAdmin();
+    }
+
+    function isValidUser(data) {
+      return data.keys().hasAll(['id', 'name', 'email', 'role', 'approvalStatus']) &&
+             data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 100 &&
+             data.email is string && data.email.size() <= 200 &&
+             data.role in ['admin', 'advisor', 'associate'] &&
+             data.approvalStatus in ['approved', 'pending', 'denied', 'revoked', 'disabled'] &&
+             (!('title' in data) || (data.title is string && data.title.size() <= 100)) &&
+             (!('department' in data) || (data.department is string && data.department.size() <= 100)) &&
+             (!('companyId' in data) || (data.companyId is string && data.companyId.size() <= 128)) &&
+             (!('avatar' in data) || (data.avatar is string && data.avatar.size() <= 500)) &&
+             (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 50)) &&
+             (!('approvedAt' in data) || (data.approvedAt is string && data.approvedAt.size() <= 50)) &&
+             (!('approvedBy' in data) || (data.approvedBy is string && data.approvedBy.size() <= 128)) &&
+             (!('deniedAt' in data) || (data.deniedAt is string && data.deniedAt.size() <= 50)) &&
+             (!('deniedBy' in data) || (data.deniedBy is string && data.deniedBy.size() <= 128));
+    }
+
+    function isValidLead(data) {
+      return data.keys().hasAll(['id', 'name', 'company', 'status', 'estimatedMonthlyRetainer']) &&
+             data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 120 &&
+             data.company is string && data.company.size() <= 150 &&
+             data.status in ['New', 'Contacted', 'Qualified', 'Converted'] &&
+             data.estimatedMonthlyRetainer is number && data.estimatedMonthlyRetainer >= 0 &&
+             (!('email' in data) || (data.email is string && data.email.size() <= 200)) &&
+             (!('phone' in data) || (data.phone is string && data.phone.size() <= 50)) &&
+             (!('companyId' in data) || (data.companyId is string && data.companyId.size() <= 128)) &&
+             (!('notes' in data) || (data.notes is list && data.notes.size() <= 200));
+    }
+
+    function isValidFollowUp(data) {
+      return data.keys().hasAll(['id', 'leadId', 'leadName', 'dueTime', 'priority', 'completed']) &&
+             data.id is string && data.id.size() <= 128 &&
+             data.leadId is string && data.leadId.size() <= 128 &&
+             data.leadName is string && data.leadName.size() <= 120 &&
+             data.dueTime is string && data.dueTime.size() <= 80 &&
+             data.priority in ['High Priority', 'Standard', 'High Value', 'Discovery', 'In Pipeline'] &&
+             data.completed is bool &&
+             (!('companyId' in data) || (data.companyId is string && data.companyId.size() <= 128)) &&
+             (!('actionSummary' in data) || (data.actionSummary is string && data.actionSummary.size() <= 500));
+    }
+
+    function isValidNotification(data) {
+      return data.keys().hasAll(['id', 'type', 'recipientEmail', 'subject', 'body']) &&
+             data.id is string && data.id.size() <= 128 &&
+             data.type is string && data.type.size() <= 50 &&
+             data.recipientEmail is string && data.recipientEmail.size() <= 200 &&
+             data.subject is string && data.subject.size() <= 250 &&
+             data.body is string && data.body.size() <= 5000;
+    }
+
+    // Users Collection - Strict Admin Control & No Self-Approval
+    match /users/{userId} {
+      // Individual users can read their own profile to verify approval status; admins can read any user profile
+      allow get: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      // Only authorized administrators can query / list the full account roster
+      allow list: if isAdmin();
+      
+      // Creating user profiles:
+      // Bootstrapped admin is created approved.
+      // Non-admins must have approvalStatus == 'pending' and non-admin role.
+      // Admin can invite/create team records directly.
+      allow create: if isSignedIn() && isValidId(userId) && isValidUser(incoming()) && (
+        isAdmin() ||
+        (request.auth.uid == userId && (
+          (isBootstrappedAdmin() && incoming().approvalStatus == 'approved' && incoming().role == 'admin') ||
+          (!isBootstrappedAdmin() && incoming().approvalStatus == 'pending' && incoming().role != 'admin')
+        ))
+      );
+
+      // Updating user profiles:
+      // Only administrators can approve, deny, revoke, disable, or alter roles.
+      // Regular users can only update profile details without altering approvalStatus, role, or companyId.
+      allow update: if isSignedIn() && isValidId(userId) && isValidUser(incoming()) && (
+        isAdmin() || 
+        (request.auth.uid == userId &&
+         incoming().approvalStatus == existing().approvalStatus &&
+         incoming().role == existing().role &&
+         (!('companyId' in existing()) || incoming().companyId == existing().companyId))
+      );
+
+      // Only administrators can remove user records
+      allow delete: if isAdmin();
+    }
+
+    // Leads Collection with Company-Level Isolation & Approved-User Gate
+    match /leads/{leadId} {
+      allow read: if isApprovedUser() && matchesUserCompany(existing());
+      allow create: if isApprovedUser() && isValidId(leadId) && isValidLead(incoming()) && matchesUserCompany(incoming());
+      allow update: if isApprovedUser() && isValidId(leadId) && isValidLead(incoming()) && matchesUserCompany(existing()) && (
+        isAdmin() || incoming().id == existing().id
+      );
+      allow delete: if isApprovedUser() && isValidId(leadId) && matchesUserCompany(existing()) && (
+        isAdmin() || 
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['admin', 'advisor'])
+      );
+    }
+
+    // Follow-Ups Collection with Approved-User Gate
+    match /followups/{followupId} {
+      allow read: if isApprovedUser() && matchesUserCompany(existing());
+      allow create: if isApprovedUser() && isValidId(followupId) && isValidFollowUp(incoming()) && matchesUserCompany(incoming());
+      allow update: if isApprovedUser() && isValidId(followupId) && isValidFollowUp(incoming()) && matchesUserCompany(existing());
+      allow delete: if isApprovedUser() && isValidId(followupId) && matchesUserCompany(existing());
+    }
+
+    // Notifications Collection with Approved-User Gate
+    match /notifications/{notificationId} {
+      allow read: if isApprovedUser() && matchesUserCompany(existing());
+      allow create: if isApprovedUser() && isValidId(notificationId) && isValidNotification(incoming());
+      allow update: if isApprovedUser() && isValidId(notificationId) && incoming().diff(existing()).affectedKeys().hasOnly(['read']);
+      allow delete: if isAdmin();
+    }
+  }
+}

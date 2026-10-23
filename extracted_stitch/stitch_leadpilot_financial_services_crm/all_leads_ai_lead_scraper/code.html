@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#737686", "primary-container": "#2563eb", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container": "#e5eeff", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "on-primary-container": "#eeefff", "on-surface-variant": "#434655", "secondary-fixed-dim": "#bec6e0", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#bdffdc", "primary-fixed": "#dbe1ff", "tertiary-fixed": "#85f8c4", "on-background": "#0b1c30", "tertiary": "#006243", "primary": "#004ac6", "error-container": "#ffdad6", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "inverse-primary": "#b4c5ff", "tertiary-fixed-dim": "#68dba9", "inverse-surface": "#213145", "on-primary-fixed-variant": "#003ea8", "secondary-fixed": "#dae2fd", "surface-variant": "#d3e4fe", "on-tertiary-fixed": "#002114", "on-primary-fixed": "#00174b", "outline-variant": "#c3c6d7", "tertiary-container": "#007d57", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "surface-tint": "#0053db", "secondary-container": "#dae2fd", "on-tertiary-fixed-variant": "#005137", "on-surface": "#0b1c30", "surface-container-high": "#dce9ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-md": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-md": "0.75rem", "margin-md": "1.5rem", "margin-lg": "2rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "margin": "1rem" }, fontFamily: { "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "metric-num": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "metric-num": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="LeadPilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy4O08IzTnS5ANZ1M6Lu2KIhbJ8pYjFB6kWcPV8lGmeVaV1VVrnRTaQTPjlG7X9AiHJVxgk1bevVu9cgrRGnsFfF-sCAyEMjoNQWZtE8itHAaUCkkxm4m7PoqSPqCDaXogP2Y-4RwbcCwuNdcNqcLDR4rz4V64Tkd2zFBymGnQ41aBhHrQjMTLAN5je1zhlFHIXhrzwrWgCx4kw0ah5EK7sJ1F5CgdmpoRmqWK631ezFjgi8lJEVV8_EXh"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">LeadPilot</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Leads</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-full"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOng8zeiFptHK96u0ZB1H0zDu3s0Yy30WnlWyN2DtfaKlQB262Ag2VpAR7nCjHjgFwIDuNu6eV_CNFHD38AnMU56CQVqBi3_t0jaKZdPZ4mRV3OPoEnJTwv-zA0qN0nqOC0BcwaIb1KBcvTs6p9LXz20I1hA1r0V1xBVzBnV96e6VWeSqhs24gqBDUEfRbw7fbyIqi3xJrF1_lj8LeBR163jln_UJlCmsz5I8wVX8UvIQur0VaOOhzg"/></button></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-20"><div class="flex flex-col w-full px-gutter pb-6 gap-space-md">
+<!-- Top Title and Action Bar -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">All Leads</h1>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+        48 leads
+      </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Export Leads CSV" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors shadow-sm active:scale-95" id="exportBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+<button class="flex items-center gap-1.5 h-10 px-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg shadow-sm active:scale-95 transition-all" id="findAiLeadsBtn" type="button"><span class="material-symbols-outlined text-[18px] text-primary">auto_awesome</span><span class="whitespace-nowrap">Find with AI</span></button><button class="flex items-center gap-1.5 h-10 px-3.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg shadow-sm active:scale-95 transition-all" id="addLeadBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add Lead</span>
+</button>
+</div>
+</div>
+<!-- Interactive Search Input -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md shadow-sm outline-none focus:bg-surface-container-low transition-all" id="leadSearchInput" placeholder="Search by name, business, or email..." type="text"/>
+<button class="hidden absolute inset-y-0 right-0 pr-3 items-center text-outline hover:text-on-surface transition-colors" id="clearSearch" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Status Filter Pills (Horizontal Scroll) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar -mx-gutter px-gutter py-1">
+<button class="status-chip active-filter flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-primary text-on-primary" data-filter="all" type="button">
+<span>All</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-on-primary text-[10px] font-bold">48</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="new" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>New</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">12</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="qualified" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Qualified</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">23</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="contacted" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Contacted</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">9</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="converted" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span>Converted</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">4</span>
+</button>
+</div>
+<!-- Service Category Sub-Filter Chips -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar -mx-gutter px-gutter py-0.5">
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface font-semibold shadow-xs" data-service="all" type="button">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>All Services</span>
+</button>
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-xs" data-service="bookkeeping" type="button">
+<span>Bookkeeping</span>
+</button>
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-xs" data-service="tax preparation" type="button">
+<span>Tax Preparation</span>
+</button>
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-xs" data-service="financial advisory" type="button">
+<span>Financial Advisory</span>
+</button>
+</div>
+<!-- Leads Cards Directory -->
+<div class="flex flex-col gap-space-sm pt-1" id="leadsListContainer">
+<!-- Lead Card 1: Marcus Vance -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Apex Logistics LLC" data-email="marcus@apexlogistics.com" data-name="Marcus Vance" data-service="bookkeeping" data-status="new">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            MV
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Marcus Vance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Apex Logistics LLC</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          New
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 border-t-0 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">receipt_long</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Bookkeeping</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">travel_explore</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Google Search</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Marcus Vance" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5552348901">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Marcus Vance" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:marcus@apexlogistics.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 2: Elena Rostova -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Northwind Dental Group" data-email="elena@northwinddental.com" data-name="Elena Rostova" data-service="tax preparation" data-status="qualified">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            ER
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Elena Rostova</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Northwind Dental Group</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Qualified
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">account_balance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tax Preparation</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">handshake</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Referral</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Elena Rostova" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5554567890">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Elena Rostova" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:elena@northwinddental.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 3: David Chen -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="CloudScale SaaS" data-email="d.chen@cloudscalesoftware.io" data-name="David Chen" data-service="financial advisory" data-status="contacted">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            DC
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">David Chen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">CloudScale SaaS</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Contacted
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">trending_up</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Financial Advisory</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">share</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">LinkedIn</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call David Chen" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5557890123">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email David Chen" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:d.chen@cloudscalesoftware.io">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 4: Sophia Miller -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Artisan Bakery Co" data-email="sophia@artisanbakery.com" data-name="Sophia Miller" data-service="bookkeeping" data-status="qualified">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            SM
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Sophia Miller</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Artisan Bakery Co</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Qualified
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">receipt_long</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Bookkeeping</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">reviews</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Clutch.co</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Sophia Miller" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5553216549">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Sophia Miller" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:sophia@artisanbakery.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 5: Robert Jenkins -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Horizon Real Estate" data-email="rjenkins@horizonrealty.net" data-name="Robert Jenkins" data-service="tax preparation" data-status="converted">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm flex-shrink-0">
+            RJ
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Robert Jenkins</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Horizon Real Estate</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Converted
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">account_balance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tax Preparation</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">web</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Website Form</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Robert Jenkins" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5558901234">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Robert Jenkins" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:rjenkins@horizonrealty.net">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 6: Priya Patel -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Spark Wellness Studio" data-email="priya@sparkwell.co" data-name="Priya Patel" data-service="financial advisory" data-status="new">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            PP
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Priya Patel</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Spark Wellness Studio</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          New
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">trending_up</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Financial Advisory</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">groups</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Local Chamber</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Priya Patel" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5556789012">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Priya Patel" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:priya@sparkwell.co">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center p-8 text-center bg-surface-container-lowest rounded-xl shadow-sm mt-2" id="leadsEmptyState">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined text-[28px]">search_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">No leads found</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[240px]">
+        Try adjusting your search terms or clearing your status filters.
+      </p>
+<button class="mt-4 px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" id="resetFiltersBtn" type="button">
+        Reset All Filters
+      </button>
+</div>
+</div>
+<!-- Pagination / Footer Info -->
+<div class="flex items-center justify-between pt-3 pb-2 px-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="showingCountText">
+      Showing <span class="font-semibold text-on-surface">6</span> of 48 leads
+    </span>
+<div class="flex items-center gap-1">
+<button aria-label="Previous Page" class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-low text-outline opacity-40 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 font-label-sm text-label-sm font-semibold text-on-surface">1</span>
+<button aria-label="Next Page" class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface shadow-xs active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Toast / Quick Feedback Notification Container -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-200" id="toastNotification">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMsg">Export ready! Downloading CSV...</span>
+</div>
+</div>
+<script>
+  (function initDirectoryInteractions() {
+    const searchInput = document.getElementById('leadSearchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    const statusChips = document.querySelectorAll('.status-chip');
+    const serviceChips = document.querySelectorAll('.service-chip');
+    const leadCards = document.querySelectorAll('.lead-card');
+    const emptyState = document.getElementById('leadsEmptyState');
+    const showingCount = document.getElementById('showingCountText');
+    const exportBtn = document.getElementById('exportBtn');
+    const addLeadBtn = document.getElementById('addLeadBtn');
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+
+    let currentStatus = 'all';
+    let currentService = 'all';
+    let currentQuery = '';
+
+    function showToast(message) {
+      if (!toast) return;
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2600);
+    }
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      leadCards.forEach(card => {
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        const company = (card.getAttribute('data-company') || '').toLowerCase();
+        const email = (card.getAttribute('data-email') || '').toLowerCase();
+        const status = (card.getAttribute('data-status') || '').toLowerCase();
+        const service = (card.getAttribute('data-service') || '').toLowerCase();
+
+        const matchesQuery = !currentQuery || 
+          name.includes(currentQuery) || 
+          company.includes(currentQuery) || 
+          email.includes(currentQuery);
+
+        const matchesStatus = currentStatus === 'all' || status === currentStatus;
+        const matchesService = currentService === 'all' || service === currentService;
+
+        if (matchesQuery && matchesStatus && matchesService) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+
+      if (showingCount) {
+        showingCount.innerHTML = `Showing <span class="font-semibold text-on-surface">${visibleCount}</span> of 48 leads`;
+      }
+    }
+
+    // Search events
+    searchInput?.addEventListener('input', (e) => {
+      currentQuery = e.target.value.trim().toLowerCase();
+      if (currentQuery.length > 0) {
+        clearSearch?.classList.remove('hidden');
+        clearSearch?.classList.add('flex');
+      } else {
+        clearSearch?.classList.add('hidden');
+        clearSearch?.classList.remove('flex');
+      }
+      applyFilters();
+    });
+
+    clearSearch?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      currentQuery = '';
+      clearSearch.classList.add('hidden');
+      clearSearch.classList.remove('flex');
+      applyFilters();
+    });
+
+    // Status chip buttons
+    statusChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        statusChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary', 'text-on-primary');
+        chip.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        currentStatus = chip.getAttribute('data-filter') || 'all';
+        applyFilters();
+      });
+    });
+
+    // Service chip buttons
+    serviceChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        serviceChips.forEach(c => {
+          c.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+        chip.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        currentService = chip.getAttribute('data-service') || 'all';
+        applyFilters();
+      });
+    });
+
+    // Reset button
+    resetFiltersBtn?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      currentQuery = '';
+      clearSearch?.classList.add('hidden');
+
+      statusChips[0]?.click();
+      serviceChips[0]?.click();
+    });
+
+    // Export & Add Lead Toast triggers
+    exportBtn?.addEventListener('click', () => {
+      showToast('Exporting 48 leads to CSV...');
+    });
+
+    addLeadBtn?.addEventListener('click', () => {
+      showToast('Opening new lead intake modal...');
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md"><div class="h-20 px-gutter flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm">Dashboard</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs transition-colors text-primary font-label-md" data-path="leads" href="#"><span class="material-symbols-outlined text-[24px]">group</span><span class="font-label-sm text-label-sm">Leads</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="follow-ups" href="#"><span class="material-symbols-outlined text-[24px]">event_upcoming</span><span class="font-label-sm text-label-sm">Follow-ups</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[24px]">settings</span><span class="font-label-sm text-label-sm">Settings</span></a></div></nav><div aria-labelledby="aiModalTitle" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden" id="aiLeadModal" role="dialog"><div class="relative w-full max-w-xl max-h-[90vh] flex flex-col bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/30 overflow-hidden"><div class="flex items-center justify-between px-5 py-4 border-b border-surface-container bg-surface-container-low/50"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">auto_awesome</span></div><div><h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight leading-tight" id="aiModalTitle">Find Leads with AI</h2><p class="font-label-sm text-label-sm text-on-surface-variant">Intelligent multi-source prospect discovery</p></div></div><button aria-label="Close modal" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" id="closeAiModalBtn" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="flex-1 overflow-y-auto p-5 space-y-4"><div class="space-y-1.5"><label class="font-label-md text-label-md font-semibold text-on-surface" for="aiSearchQuery">Search Query <span class="text-error">*</span></label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span><input class="w-full h-10 pl-9 pr-3 rounded-xl border border-outline-variant/60 bg-surface text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:border-primary focus:bg-surface-container-lowest outline-none transition-all" id="aiSearchQuery" placeholder="e.g., Dental practice owners, eCommerce CFOs, independent contractors" type="text" value="Dental practice owners"/></div></div><div class="space-y-1.5"><label class="font-label-md text-label-md font-semibold text-on-surface" for="aiLocationQuery">Location <span class="text-on-surface-variant font-normal text-label-sm">(optional)</span></label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">location_on</span><input class="w-full h-10 pl-9 pr-3 rounded-xl border border-outline-variant/60 bg-surface text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:border-primary focus:bg-surface-container-lowest outline-none transition-all" id="aiLocationQuery" placeholder="e.g., Chicago, IL or United States" type="text" value="Chicago, IL"/></div></div><div class="space-y-2"><label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between"><span>Platform Sources</span><span class="font-label-sm text-label-sm text-primary font-normal">Multi-select</span></label><div class="flex flex-wrap gap-2" id="aiSourcePills"><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium border border-primary/30 bg-primary/10 text-primary transition-all active:scale-95" type="button"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>LinkedIn (API Connected)</span></button><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium border border-tertiary/30 bg-tertiary-fixed/40 text-on-tertiary-fixed-variant transition-all active:scale-95" type="button"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span><span>Company Websites (Public Web)</span></button><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium border border-primary/30 bg-primary/10 text-primary transition-all active:scale-95" type="button"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>Google Search (Search Engine)</span></button><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium border border-outline-variant/60 bg-surface-container-low text-on-surface-variant transition-all active:scale-95" type="button"><span class="w-1.5 h-1.5 rounded-full bg-outline"></span><span>Business Directories (Public)</span></button><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium border border-outline-variant/60 bg-surface-container-low text-on-surface-variant transition-all active:scale-95" type="button"><span class="w-1.5 h-1.5 rounded-full bg-outline"></span><span>Indeed (Job Postings)</span></button><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-label-sm font-label-sm font-medium border border-outline-variant/60 bg-surface-container-low text-on-surface-variant transition-all active:scale-95" type="button"><span class="w-1.5 h-1.5 rounded-full bg-outline"></span><span>Instagram / Threads</span></button></div></div><div class="space-y-1.5"><label class="font-label-md text-label-md font-semibold text-on-surface">Number of Leads</label><div class="flex items-center gap-2"><button class="flex-1 py-1.5 text-center font-label-md text-label-md rounded-lg border border-outline-variant/50 bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" type="button">5 leads</button><button class="flex-1 py-1.5 text-center font-label-md text-label-md font-semibold rounded-lg bg-primary text-on-primary shadow-xs transition-all" type="button">10 leads</button><button class="flex-1 py-1.5 text-center font-label-md text-label-md rounded-lg border border-outline-variant/50 bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-all" type="button">25 leads</button></div></div><div class="p-3 rounded-xl bg-surface-container-high/60 border border-surface-container-highest flex items-start gap-2.5"><span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">hub</span><div class="text-body-sm font-body-sm text-on-surface-variant leading-relaxed"><span class="font-semibold text-on-surface">n8n AI Workflow Ready:</span> Discovered public contacts extract strictly <span class="font-semibold text-on-surface">Name</span>, <span class="font-semibold text-on-surface">Email</span>, <span class="font-semibold text-on-surface">Phone</span>, and <span class="font-semibold text-on-surface">Website</span> for client intake review.</div></div><div class="space-y-2 pt-1"><div class="flex items-center justify-between"><span class="font-label-md text-label-md font-semibold text-on-surface">Discovered Leads Preview</span><span class="font-label-sm text-label-sm text-on-surface-variant">3 found in preview</span></div><div class="space-y-2 max-h-52 overflow-y-auto pr-0.5"><div class="p-3 rounded-xl border border-outline-variant/50 bg-surface-container-lowest flex items-start justify-between gap-3"><div class="flex items-start gap-2.5 min-w-0"><input checked="" class="mt-1 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/><div class="min-w-0"><div class="flex items-center gap-2"><span class="font-headline-sm text-[14px] text-on-surface font-semibold truncate">Dr. Arthur Sterling</span><span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">Unique</span></div><p class="text-body-sm text-on-surface-variant text-[12px] truncate">sterling.dds@midwestdental.org</p><div class="flex items-center gap-3 text-on-surface-variant text-[11px] mt-0.5"><span class="truncate">+1 (312) 555-0194</span><span>•</span><span class="text-primary truncate">midwestdental.org</span></div></div></div></div><div class="p-3 rounded-xl border border-error-container bg-error-container/20 flex items-start justify-between gap-3"><div class="flex items-start gap-2.5 min-w-0"><input class="mt-1 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/><div class="min-w-0"><div class="flex items-center gap-2"><span class="font-headline-sm text-[14px] text-on-surface font-semibold truncate">Elena Rostova</span><span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-error-container text-error">Duplicate Detected</span></div><p class="text-body-sm text-on-surface-variant text-[12px] truncate">elena@northwinddental.com</p><div class="flex items-center gap-3 text-on-surface-variant text-[11px] mt-0.5"><span class="truncate">+1 (555) 456-7890</span><span>•</span><span class="text-primary truncate">northwinddental.com</span></div></div></div></div><div class="p-3 rounded-xl border border-outline-variant/50 bg-surface-container-lowest flex items-start justify-between gap-3"><div class="flex items-start gap-2.5 min-w-0"><input checked="" class="mt-1 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/><div class="min-w-0"><div class="flex items-center gap-2"><span class="font-headline-sm text-[14px] text-on-surface font-semibold truncate">Dr. Camille Laurent</span><span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">Unique</span></div><p class="text-body-sm text-on-surface-variant text-[12px] truncate">contact@laurentortho.com</p><div class="flex items-center gap-3 text-on-surface-variant text-[11px] mt-0.5"><span class="text-outline truncate">— Not listed</span><span>•</span><span class="text-primary truncate">laurentortho.com</span></div></div></div></div></div></div></div><div class="flex items-center justify-end gap-2.5 px-5 py-3.5 border-t border-surface-container bg-surface-container-low/40"><button class="px-4 py-2 rounded-xl text-on-surface-variant font-label-md text-label-md hover:bg-surface-container font-medium transition-colors" id="cancelAiModalBtn" type="button">Cancel</button><button class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all active:scale-95" id="populateLeadFormBtn" type="button"><span class="material-symbols-outlined text-[18px]">assignment_turned_in</span><span>Populate Add Lead Form</span></button></div></div></div><script>(function initAiLeadModal(){const openBtn = document.getElementById('findAiLeadsBtn');const modal = document.getElementById('aiLeadModal');const closeBtn = document.getElementById('closeAiModalBtn');const cancelBtn = document.getElementById('cancelAiModalBtn');const populateBtn = document.getElementById('populateLeadFormBtn');const toast = document.getElementById('toastNotification');const toastMsg = document.getElementById('toastMsg');function showToast(msg){if(!toast) return;toastMsg.textContent = msg;toast.classList.remove('opacity-0','pointer-events-none');toast.classList.add('opacity-100');setTimeout(()=>{toast.classList.add('opacity-0','pointer-events-none');toast.classList.remove('opacity-100');},2600);}function openModal(){modal?.classList.remove('hidden');modal?.classList.add('flex');}function closeModal(){modal?.classList.add('hidden');modal?.classList.remove('flex');}openBtn?.addEventListener('click', openModal);closeBtn?.addEventListener('click', closeModal);cancelBtn?.addEventListener('click', closeModal);modal?.addEventListener('click', (e)=>{if(e.target === modal) closeModal();});populateBtn?.addEventListener('click', ()=>{closeModal();showToast('2 unique discovered leads added to intake queue!');});})();</script></body></html>

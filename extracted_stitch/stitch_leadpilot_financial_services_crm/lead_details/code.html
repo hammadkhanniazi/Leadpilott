@@ -1,0 +1,457 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#737686", "primary-container": "#2563eb", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container": "#e5eeff", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "on-primary-container": "#eeefff", "on-surface-variant": "#434655", "secondary-fixed-dim": "#bec6e0", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#bdffdc", "primary-fixed": "dbe1ff", "tertiary-fixed": "#85f8c4", "on-background": "#0b1c30", "tertiary": "#006243", "primary": "#004ac6", "error-container": "#ffdad6", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "inverse-primary": "#b4c5ff", "tertiary-fixed-dim": "#68dba9", "inverse-surface": "#213145", "on-primary-fixed-variant": "#003ea8", "secondary-fixed": "#dae2fd", "surface-variant": "#d3e4fe", "on-tertiary-fixed": "#002114", "on-primary-fixed": "#00174b", "outline-variant": "#c3c6d7", "tertiary-container": "#007d57", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "surface-tint": "#0053db", "secondary-container": "#dae2fd", "on-tertiary-fixed-variant": "#005137", "on-surface": "#0b1c30", "surface-container-high": "#dce9ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-md": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-md": "0.75rem", "margin-md": "1.5rem", "margin-lg": "2rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "margin": "1rem" }, fontFamily: { "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "metric-num": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "metric-num": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] flex items-center justify-center -ml-space-xs text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="LeadPilot Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy4O08IzTnS5ANZ1M6Lu2KIhbJ8pYjFB6kWcPV8lGmeVaV1VVrnRTaQTPjlG7X9AiHJVxgk1bevVu9cgrRGnsFfF-sCAyEMjoNQWZtE8itHAaUCkkxm4m7PoqSPqCDaXogP2Y-4RwbcCwuNdcNqcLDR4rz4V64Tkd2zFBymGnQ41aBhHrQjMTLAN5je1zhlFHIXhrzwrWgCx4kw0ah5EK7sJ1F5CgdmpoRmqWK631ezFjgi8lJEVV8_EXh"><h1 class="font-headline-sm text-headline-sm text-on-surface ml-space-xs">Lead Details</h1></div><div class="flex items-center gap-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOng8zeiFptHK96u0ZB1H0zDu3s0Yy30WnlWyN2DtfaKlQB262Ag2VpAR7nCjHjgFwIDuNu6eV_CNFHD38AnMU56CQVqBi3_t0jaKZdPZ4mRV3OPoEnJTwv-zA0qN0nqOC0BcwaIb1KBcvTs6p9LXz20I1hA1r0V1xBVzBnV96e6VWeSqhs24gqBDUEfRbw7fbyIqi3xJrF1_lj8LeBR163jln_UJlCmsz5I8wVX8UvIQur0VaOOhzg"></div></div></header><main class="flex-1 w-full bg-surface pt-16"><div class="flex flex-col w-full pb-24">
+<!-- Top Profile Subheader & Quick Status -->
+<div class="px-gutter pt-space-md pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-11 h-11 rounded-full overflow-hidden shrink-0 shadow-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Editorial close-up portrait of Marcus Vance, an athletic 38-year-old logistics founder with warm confidence, soft ambient office light, styled in a sleek dark blue polo against a subtle modern industrial logistics background, professional clean photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcp8GW0E1OVj3kpSkU6ykUuHdBg3r2-mX6mmILpsPgWJEgaU5E_I7q5MAm0sGXRfG_l_CboHoWYxNkaJprign53vZ94SLGopIo72kx4VqauK3BCDZY5WEtRMMBr9Mw9jxm7hcfw8FxnNga26rCAhWrVAWoYpd93sKccv1MBDo0jk_bvdwMM1C_80dI8iMVgZRcrAp5N2ikfj1iX0UXgAhd76ovUyXNPbR_-8iHODgT3ZVUKs_aE4VnZQ">
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary shadow-sm"></span>
+</div>
+<div class="min-w-0">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Marcus Vance</h2>
+<p class="font-label-md text-label-md text-on-surface-variant truncate">Apex Logistics LLC</p>
+</div>
+</div>
+<!-- Status Pill with Dropdown Trigger -->
+<div class="relative">
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-primary font-label-sm text-label-sm shadow-sm transition-all active:scale-95" id="status-dropdown-trigger" onclick="toggleStatusDropdown()">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse" id="current-status-dot"></span>
+<span id="current-status-label">New</span>
+<span class="material-symbols-outlined text-[16px] leading-none">expand_more</span>
+</button>
+<!-- Status Dropdown Menu -->
+<div class="hidden absolute right-0 mt-2 w-44 rounded-xl bg-surface-container-lowest shadow-xl z-30 py-1.5 overflow-hidden transition-all duration-200" id="status-menu">
+<div class="px-3 py-1 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Update Stage</div>
+<button class="w-full text-left px-3 py-2 flex items-center justify-between font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="updatePipelineStage(0, 'New')">
+<span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary"></span>New</span>
+<span class="material-symbols-outlined text-[18px] text-primary" id="check-stage-0">check</span>
+</button>
+<button class="w-full text-left px-3 py-2 flex items-center justify-between font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="updatePipelineStage(1, 'Contacted')">
+<span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary"></span>Contacted</span>
+<span class="material-symbols-outlined text-[18px] text-primary hidden" id="check-stage-1">check</span>
+</button>
+<button class="w-full text-left px-3 py-2 flex items-center justify-between font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="updatePipelineStage(2, 'Qualified')">
+<span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary"></span>Qualified</span>
+<span class="material-symbols-outlined text-[18px] text-primary hidden" id="check-stage-2">check</span>
+</button>
+<button class="w-full text-left px-3 py-2 flex items-center justify-between font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" onclick="updatePipelineStage(3, 'Converted')">
+<span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span>Converted</span>
+<span class="material-symbols-outlined text-[18px] text-primary hidden" id="check-stage-3">check</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pipeline Stepper Tracker -->
+<div class="px-gutter my-space-sm">
+<div class="bg-surface-container-low rounded-xl p-3 shadow-sm">
+<div class="flex items-center justify-between relative">
+<!-- Connecting Line -->
+<div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-1 bg-surface-container rounded-full z-0"></div>
+<div class="absolute left-4 top-1/2 -translate-y-1/2 h-1 bg-primary rounded-full z-0 transition-all duration-300" id="stepper-progress" style="width: 8%;"></div>
+<!-- Step 1: New -->
+<button class="relative z-10 flex flex-col items-center gap-1 group" onclick="updatePipelineStage(0, 'New')">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-md transition-transform duration-200 group-hover:scale-105" id="step-node-0">
+            1
+          </div>
+<span class="font-label-sm text-label-sm text-primary font-semibold" id="step-text-0">New</span>
+</button>
+<!-- Step 2: Contacted -->
+<button class="relative z-10 flex flex-col items-center gap-1 group" onclick="updatePipelineStage(1, 'Contacted')">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105" id="step-node-1">
+            2
+          </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="step-text-1">Contacted</span>
+</button>
+<!-- Step 3: Qualified -->
+<button class="relative z-10 flex flex-col items-center gap-1 group" onclick="updatePipelineStage(2, 'Qualified')">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105" id="step-node-2">
+            3
+          </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="step-text-2">Qualified</span>
+</button>
+<!-- Step 4: Converted -->
+<button class="relative z-10 flex flex-col items-center gap-1 group" onclick="updatePipelineStage(3, 'Converted')">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm transition-transform duration-200 group-hover:scale-105" id="step-node-3">
+<span class="material-symbols-outlined text-[15px]">flag</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="step-text-3">Converted</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lead Overview Card -->
+<div class="px-gutter mt-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<!-- Business & Est Value Headline Grid -->
+<div class="flex items-start justify-between gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+<span>Freight &amp; Courier Services</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface mt-0.5 truncate">
+            Apex Logistics LLC
+          </div>
+</div>
+<div class="text-right shrink-0 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Est. Retainer</div>
+<div class="font-metric-num text-metric-num text-primary font-bold">$650 <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">/mo</span></div>
+</div>
+</div>
+<!-- Service Pill & Quick Details -->
+<div class="flex items-center gap-2 flex-wrap">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span>
+          Bookkeeping &amp; Reconciliations
+        </div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+          Monthly Recurring
+        </div>
+</div>
+<!-- Quick Contact One-Tap Action Bar -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<a class="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-surface-container hover:bg-surface-variant text-primary font-label-md text-label-md shadow-sm transition-all active:scale-95" href="tel:5552348901">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call</span>
+</a>
+<a class="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-surface-container hover:bg-surface-variant text-primary font-label-md text-label-md shadow-sm transition-all active:scale-95" href="mailto:marcus@apexlogistics.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>Email</span>
+</a>
+<a class="flex items-center justify-center gap-1.5 py-2 px-2 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md shadow-sm transition-all active:scale-95" href="https://example.com" target="_blank">
+<span class="material-symbols-outlined text-[18px]">language</span>
+<span>Website</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Interactive Segmented Navigation Tabs -->
+<div class="px-gutter mt-space-md">
+<div class="bg-surface-container rounded-xl p-1 flex items-center justify-between shadow-sm">
+<button class="flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 bg-surface-container-lowest text-primary font-semibold shadow-sm" id="tab-btn-overview" onclick="switchLeadTab('overview')">
+        Overview &amp; Info
+      </button>
+<button class="flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="tab-btn-activity" onclick="switchLeadTab('activity')">
+        Notes &amp; Activity <span class="ml-0.5 px-1.5 py-0.2 bg-primary-container text-on-primary rounded-full text-[10px]">2</span>
+</button>
+<button class="flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 text-on-surface-variant hover:text-on-surface" id="tab-btn-schedule" onclick="switchLeadTab('schedule')">
+        Follow-up
+      </button>
+</div>
+</div>
+<!-- Tab 1: Overview & Info -->
+<div class="flex flex-col px-gutter mt-space-sm gap-space-sm" id="tab-content-overview">
+<!-- Contact Info Card with Edit -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between pb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Contact Information</h3>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-medium hover:underline" onclick="triggerQuickToast('Opening edit modal...')">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+          Edit
+        </button>
+</div>
+<!-- Info Item List -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-start justify-between py-1 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Full Name</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold text-right">Marcus Vance</span>
+</div>
+<div class="flex items-start justify-between py-1 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Business</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold text-right">Apex Logistics LLC</span>
+</div>
+<div class="flex items-start justify-between py-1 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Email Address</span>
+<a class="font-label-lg text-label-lg text-primary font-medium text-right underline truncate max-w-[190px]" href="mailto:marcus@apexlogistics.com">
+            marcus@apexlogistics.com
+          </a>
+</div>
+<div class="flex items-start justify-between py-1 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Direct Phone</span>
+<a class="font-label-lg text-label-lg text-primary font-medium text-right underline" href="tel:5552348901">
+            (555) 234-8901
+          </a>
+</div>
+<div class="flex items-start justify-between py-1 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Lead Source</span>
+<span class="font-label-md text-label-md text-on-surface inline-flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[15px] text-primary">share</span>
+            Referral via LinkedIn
+          </span>
+</div>
+<div class="flex items-start justify-between py-1 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Date Created</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Oct 24, 2024 (9:00 AM)</span>
+</div>
+</div>
+</div>
+<!-- Client Business Snapshot Card with Imagery -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Client Operations</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold bg-tertiary-fixed px-2 py-0.5 rounded-full">Fleet Verified</span>
+</div>
+<div class="relative w-full h-28 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Wide panoramic shot of modern logistics delivery vans parked in high-tech warehouse facility with warm sunrise natural lighting, crisp clean commercial fleet aesthetic with subtle corporate blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnyI00wgV8s9qNDXGidyTke2f5lNdkoXSLYiQryUD0nAn37qE0i-wMcNyjYBKL0tcwe3niytRF6nFO0zCLEWQPfy0t3GNDxkTRBskzzHypqx7U3G64Ge31O-Ph_9cK_B_Rk-47alaiMWirYHOgPn9b2xvjrZDja5M_4cab1iOJw0oNMpxqfys1VEraC7Cg3nke8DEQ9SA_ELLhPbc35i19xsINnyf8QK_NwKEMDEJB5UYRw8HAOPdYFw">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-2 text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+          Chicago Regional Fleet Hub
+        </div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Active QBO Bank Feeds</span>
+<span class="font-semibold text-on-surface">3 Checking / Card Accounts</span>
+</div>
+</div>
+</div>
+<!-- Tab 2: Notes & Activity -->
+<div class="hidden flex-col px-gutter mt-space-sm gap-space-sm" id="tab-content-activity">
+<!-- Quick Add Note Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5" for="new-note-input">
+<span class="material-symbols-outlined text-[20px] text-primary">edit_note</span>
+          Quick Log Note
+        </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Markdown supported</span>
+</div>
+<textarea class="w-full bg-surface-container-low rounded-lg p-3 text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest shadow-inner transition-colors" id="new-note-input" placeholder="Type call notes, client updates, or quote progress..." rows="3"></textarea>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<button class="p-1 rounded hover:bg-surface-container" title="Attach file" type="button">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container" title="Mention team member" type="button">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:opacity-90 active:scale-95 transition-all" id="post-note-btn" onclick="postNewNote()">
+<span class="material-symbols-outlined text-[16px]">send</span>
+          Post Note
+        </button>
+</div>
+</div>
+<!-- Activity Stream -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between pb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Timeline &amp; Logs</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 Entries</span>
+</div>
+<div class="flex flex-col gap-3 relative" id="notes-list-container">
+<!-- Connecting Vertical Line -->
+<div class="absolute left-4 top-4 bottom-4 w-0.5 bg-surface-container-high z-0"></div>
+<!-- Note Item 1 -->
+<div class="relative z-10 flex items-start gap-3 pl-1">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-primary flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-lg p-3">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sarah M.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Yesterday, 2:15 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+              Spoke briefly on phone. They have 3 bank accounts needing reconciliation in QuickBooks Online. Requested quote by Thursday.
+            </p>
+<div class="mt-2 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-[11px] font-label-sm text-primary bg-surface-container-high px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">alarm</span> QBO Scope
+              </span>
+</div>
+</div>
+</div>
+<!-- Note Item 2 -->
+<div class="relative z-10 flex items-start gap-3 pl-1">
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[16px]">web</span>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-lg p-3">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">System Webhook</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 24, 9:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+              Lead submitted inquiry form via website landing page.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 3: Follow-up Schedule -->
+<div class="hidden flex-col px-gutter mt-space-sm gap-space-sm" id="tab-content-schedule">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Scheduled Touchpoints</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">1 Pending</span>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">calendar_clock</span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md text-on-surface font-semibold truncate">Deliver QBO Pricing Quote</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Thursday, 11:30 AM EST</div>
+</div>
+</div>
+<button class="p-2 rounded-lg bg-surface-container-highest text-primary hover:bg-surface-container transition-colors" onclick="triggerQuickToast('Reminder marked done!')">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</button>
+</div>
+<!-- Quick Add Task -->
+<div class="mt-2 pt-2 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Need to book another touchpoint?</span>
+<button class="font-label-md text-label-md text-primary font-semibold hover:underline" onclick="openFollowupModal()">
+          + Add Reminder
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Feedback Banner -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full font-label-md text-label-md shadow-xl transition-all duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2" id="quick-toast">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">info</span>
+<span id="toast-message">Action successful</span>
+</div>
+<!-- Bottom Sticky Actions Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md px-gutter py-3 shadow-[0_-2px_12px_rgba(0,0,0,0.06)] pb-safe">
+<div class="flex items-center gap-space-sm max-w-lg mx-auto">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-variant active:scale-95 transition-all text-center" onclick="triggerQuickToast('Editing lead details...')" type="button">
+        Edit Lead Details
+      </button>
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container active:scale-95 transition-all text-center flex items-center justify-center gap-1.5 shadow-md" onclick="openFollowupModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">event</span>
+        Schedule Follow-up
+      </button>
+</div>
+</div>
+</div>
+<script>
+  let currentStageIndex = 0;
+  const stages = ['New', 'Contacted', 'Qualified', 'Converted'];
+
+  function toggleStatusDropdown() {
+    const menu = document.getElementById('status-menu');
+    menu.classList.toggle('hidden');
+  }
+
+  // Close dropdown on click outside
+  document.addEventListener('click', (e) => {
+    const trigger = document.getElementById('status-dropdown-trigger');
+    const menu = document.getElementById('status-menu');
+    if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+
+  function updatePipelineStage(index, stageName) {
+    currentStageIndex = index;
+    
+    // Update Dropdown UI
+    document.getElementById('current-status-label').innerText = stageName;
+    document.getElementById('status-menu').classList.add('hidden');
+
+    // Update Dropdown checkmarks
+    for (let i = 0; i < 4; i++) {
+      const check = document.getElementById(`check-stage-${i}`);
+      if (check) {
+        if (i === index) check.classList.remove('hidden');
+        else check.classList.add('hidden');
+      }
+    }
+
+    // Update Stepper Progress Bar
+    const progressWidths = ['8%', '38%', '70%', '100%'];
+    const progressBar = document.getElementById('stepper-progress');
+    progressBar.style.width = progressWidths[index];
+
+    // Update Nodes & Labels
+    for (let i = 0; i < 4; i++) {
+      const node = document.getElementById(`step-node-${i}`);
+      const text = document.getElementById(`step-text-${i}`);
+      
+      if (i <= index) {
+        node.className = "w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm shadow-md transition-transform duration-200";
+        text.className = "font-label-sm text-label-sm text-primary font-semibold";
+      } else {
+        node.className = "w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm transition-transform duration-200";
+        text.className = "font-label-sm text-label-sm text-on-surface-variant";
+      }
+    }
+
+    triggerQuickToast(`Lead stage updated to ${stageName}!`);
+  }
+
+  function switchLeadTab(tabKey) {
+    const tabs = ['overview', 'activity', 'schedule'];
+    tabs.forEach(t => {
+      const btn = document.getElementById(`tab-btn-${t}`);
+      const content = document.getElementById(`tab-content-${t}`);
+      
+      if (t === tabKey) {
+        btn.className = "flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 bg-surface-container-lowest text-primary font-semibold shadow-sm";
+        content.classList.remove('hidden');
+      } else {
+        btn.className = "flex-1 py-1.5 px-2 rounded-lg font-label-md text-label-md text-center transition-all duration-200 text-on-surface-variant hover:text-on-surface";
+        content.classList.add('hidden');
+      }
+    });
+  }
+
+  function postNewNote() {
+    const input = document.getElementById('new-note-input');
+    const text = input.value.trim();
+    if (!text) {
+      triggerQuickToast("Please write a note first.");
+      return;
+    }
+
+    const container = document.getElementById('notes-list-container');
+    const newEntry = document.createElement('div');
+    newEntry.className = "relative z-10 flex items-start gap-3 pl-1";
+    newEntry.innerHTML = `
+      <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+        <span class="material-symbols-outlined text-[16px]">edit</span>
+      </div>
+      <div class="flex-1 bg-surface-container-low rounded-lg p-3">
+        <div class="flex items-center justify-between gap-1 mb-1">
+          <span class="font-label-md text-label-md text-on-surface font-semibold">You (Active Advisor)</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Just now</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          ${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}
+        </p>
+      </div>
+    `;
+
+    // Insert as first note item (after vertical line)
+    container.insertBefore(newEntry, container.children[1]);
+    input.value = '';
+    triggerQuickToast("Note added to lead timeline!");
+  }
+
+  function openFollowupModal() {
+    switchLeadTab('schedule');
+    triggerQuickToast("Opening follow-up scheduler...");
+  }
+
+  function triggerQuickToast(message) {
+    const toast = document.getElementById('quick-toast');
+    const label = document.getElementById('toast-message');
+    label.innerText = message;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2400);
+  }
+</script></main></body></html>

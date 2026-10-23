@@ -1,0 +1,417 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#737686", "primary-container": "#2563eb", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container": "#e5eeff", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "on-primary-container": "#eeefff", "on-surface-variant": "#434655", "secondary-fixed-dim": "#bec6e0", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#bdffdc", "primary-fixed": "#dbe1ff", "tertiary-fixed": "#85f8c4", "on-background": "#0b1c30", "tertiary": "#006243", "primary": "#004ac6", "error-container": "#ffdad6", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "inverse-primary": "#b4c5ff", "tertiary-fixed-dim": "#68dba9", "inverse-surface": "#213145", "on-primary-fixed-variant": "#003ea8", "secondary-fixed": "#dae2fd", "surface-variant": "#d3e4fe", "on-tertiary-fixed": "#002114", "on-primary-fixed": "#00174b", "outline-variant": "#c3c6d7", "tertiary-container": "#007d57", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "surface-tint": "#0053db", "secondary-container": "#dae2fd", "on-tertiary-fixed-variant": "#005137", "on-surface": "#0b1c30", "surface-container-high": "#dce9ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-md": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-md": "0.75rem", "margin-md": "1.5rem", "margin-lg": "2rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "margin": "1rem" }, fontFamily: { "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "metric-num": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "metric-num": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="LeadPilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy4O08IzTnS5ANZ1M6Lu2KIhbJ8pYjFB6kWcPV8lGmeVaV1VVrnRTaQTPjlG7X9AiHJVxgk1bevVu9cgrRGnsFfF-sCAyEMjoNQWZtE8itHAaUCkkxm4m7PoqSPqCDaXogP2Y-4RwbcCwuNdcNqcLDR4rz4V64Tkd2zFBymGnQ41aBhHrQjMTLAN5je1zhlFHIXhrzwrWgCx4kw0ah5EK7sJ1F5CgdmpoRmqWK631ezFjgi8lJEVV8_EXh"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">LeadPilot</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Follow Ups</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-full"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOng8zeiFptHK96u0ZB1H0zDu3s0Yy30WnlWyN2DtfaKlQB262Ag2VpAR7nCjHjgFwIDuNu6eV_CNFHD38AnMU56CQVqBi3_t0jaKZdPZ4mRV3OPoEnJTwv-zA0qN0nqOC0BcwaIb1KBcvTs6p9LXz20I1hA1r0V1xBVzBnV96e6VWeSqhs24gqBDUEfRbw7fbyIqi3xJrF1_lj8LeBR163jln_UJlCmsz5I8wVX8UvIQur0VaOOhzg"></button></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-20"><div class="flex flex-col w-full px-gutter pb-space-xl">
+<!-- Top Context & Headline -->
+<div class="flex flex-col pt-space-md pb-space-sm gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Follow-ups</span>
+<span class="bg-primary-container/10 text-primary-container font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-semibold">5 Due Soon</span>
+</div>
+<button class="h-9 px-3.5 bg-primary-container text-on-primary font-label-md text-label-md rounded-xl shadow-sm flex items-center gap-1 active:scale-95 transition-all" id="quick-schedule-btn">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Schedule</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      Active follow-ups scheduled for accounting &amp; advisory prospects
+    </p>
+</div>
+<!-- Attention Banner (Urgent Attention) -->
+<div class="mt-space-sm mb-space-md p-space-md bg-secondary-container/60 rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-secondary-container shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">alarm_on</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">2 follow-ups due today</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Apex Logistics &amp; Northwind Dental</span>
+</div>
+</div>
+<span class="bg-surface-container-lowest text-primary font-label-sm text-label-sm px-2 py-1 rounded-lg font-semibold flex-shrink-0 shadow-sm">Urgent</span>
+</div>
+<!-- Filter Pills Swiper -->
+<div class="flex items-center gap-2 overflow-x-auto pb-space-sm -mx-gutter px-gutter no-scrollbar" id="filter-container">
+<button class="filter-tab active h-8 px-3.5 bg-primary-container text-on-primary rounded-full font-label-md text-label-md shadow-sm transition-all flex-shrink-0 flex items-center gap-1.5" data-filter="all">
+<span>All</span>
+<span class="w-4 h-4 rounded-full bg-white/20 text-on-primary font-label-sm text-label-sm flex items-center justify-center text-[10px]" id="count-all">5</span>
+</button>
+<button class="filter-tab h-8 px-3.5 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface rounded-full font-label-md text-label-md shadow-sm transition-all flex-shrink-0 flex items-center gap-1.5" data-filter="today">
+<span>Due Today</span>
+<span class="w-4 h-4 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center text-[10px]" id="count-today">2</span>
+</button>
+<button class="filter-tab h-8 px-3.5 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface rounded-full font-label-md text-label-md shadow-sm transition-all flex-shrink-0 flex items-center gap-1.5" data-filter="upcoming">
+<span>Upcoming</span>
+<span class="w-4 h-4 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center text-[10px]" id="count-upcoming">3</span>
+</button>
+<button class="filter-tab h-8 px-3.5 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface rounded-full font-label-md text-label-md shadow-sm transition-all flex-shrink-0 flex items-center gap-1.5" data-filter="completed">
+<span>Completed</span>
+<span class="w-4 h-4 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center text-[10px]" id="count-completed">0</span>
+</button>
+</div>
+<!-- Cards List -->
+<div class="flex flex-col gap-space-md mt-space-xs" id="followups-list">
+<!-- Card 1 -->
+<div class="followup-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all duration-200" data-bucket="today" data-id="1">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-10 h-10 rounded-full object-cover flex-shrink-0" data-alt="Professional headshot of Marcus Vance in a clean modern advisory office with soft blue architectural light, sharp business portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJjXmX5EyXC6FaIY_LUnh9PErmsazjPgsMqqytLIJ9S1SWfM0mBs3azKr6N_Qczi459rybENB19jHh2CHI7HiFxKHmGarI7iZRWPfYVMcnroItrTxeJAFEcAEzp0VcL3CLIEkovO9Rga9rpwaFUsR0Y51JrBOQIe8Z8etnLF-pL2eBZbv2534_4BiBcA5iGshWZg0ZoGZsdLseTeJJRw2XSpMIN0KO9VsGUVQ3yUsUAFNn9lB4TGTqRg">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Marcus Vance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Apex Logistics LLC</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Today, 3:00 PM</span>
+<span class="text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> High Priority
+          </span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Scheduled Action</span>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold">$650/mo Clean-up</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Call to review bookkeeping clean-up proposal &amp; clarify 2 past-due reconciliations.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">New Lead</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Bookkeeping</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="mark-done-btn h-9 px-3 bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm rounded-xl flex items-center gap-1 transition-colors" data-task-id="1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Done</span>
+</button>
+<a class="h-9 px-3 bg-primary-container text-on-primary font-label-sm text-label-sm rounded-xl shadow-sm flex items-center gap-1 active:scale-95 transition-transform" href="tel:5550192834">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>Call Now</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="followup-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all duration-200" data-bucket="today" data-id="2">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-10 h-10 rounded-full object-cover flex-shrink-0" data-alt="Professional portrait of Elena Rostova, dental group executive director, dressed in smart corporate attire with bright airy clinic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT6bxJ79V7eksCW7jTDTECABNrmOclmZm0Sh15oPTEX1Ixo_uk0iRTC_L24vfSIsOYU8hTiE6DlbUmhfsZYokP3SJ75gn6h_Viv3ykO3dlc5Dw4HjtnQ95SQxfZeUdQZ4IrhHEs-mHGjfCqA6Bhcmv52TdUgQ_hjRsPqjKcQudWSFnhZpKmLw5UezybGiYAXeStOmTsRMJ9-Dhzub5fNbeWdTE6VzFwji8xdjvrxIrXRX7bfujbtxR4Q">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Elena Rostova</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Northwind Dental Group</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Today, 5:30 PM</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-medium">Standard</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Scheduled Action</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Docs Ready</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Send engagement letter and 2023 corporate tax return preparation checklist.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="bg-tertiary-container/10 text-tertiary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Qualified</span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Tax Preparation</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="mark-done-btn h-9 px-3 bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm rounded-xl flex items-center gap-1 transition-colors" data-task-id="2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Done</span>
+</button>
+<a class="h-9 px-3 bg-primary-container text-on-primary font-label-sm text-label-sm rounded-xl shadow-sm flex items-center gap-1 active:scale-95 transition-transform" href="mailto:elena@northwinddental.com?subject=Engagement%20Letter%20%26%20Tax%20Checklist">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+<span>Email</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="followup-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all duration-200" data-bucket="upcoming" data-id="3">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-10 h-10 rounded-full object-cover flex-shrink-0" data-alt="Portrait of David Chen, tech startup founder, smiling warmly with minimalist modern office and laptop setting in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBZmr--vfBkhkie9-drWWoc8irS7LIunvc5_fBAcSBs49ojspqCGWoNGj41uNkh-1KwQ-ZygCiKkY0YsmKuzsJe9ZHgkOKYn1wDNbHSWsjFUDkLS-b-xRlaNnqCOxWYdskv5REAma--zUN10Dpw6bkLXFdXxVC-xPvq5wc64bZXFokT19syyxuVSjLghu3Uuz_Oj3JDdJMfhyBJRceWQdo4Jytb8nwCrITvWzpJvDQFhTaKQS3Zm54Xg">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">David Chen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">CloudScale SaaS</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Tomorrow, 10:00 AM</span>
+<span class="text-primary font-label-sm text-label-sm font-semibold">High Value</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Scheduled Action</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">$3,200/mo Advisory</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Second advisory check-in &amp; review fractional CFO monthly scope agreement.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Contacted</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Financial Advisory</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="mark-done-btn h-9 px-3 bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm rounded-xl flex items-center gap-1 transition-colors" data-task-id="3">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Done</span>
+</button>
+<button class="reschedule-btn h-9 px-3 bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm rounded-xl flex items-center gap-1 active:scale-95 transition-transform" data-task-id="3">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>Reschedule</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="followup-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all duration-200" data-bucket="upcoming" data-id="4">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-10 h-10 rounded-full object-cover flex-shrink-0" data-alt="Portrait of Sophia Miller, artisan bakery business owner, standing in front of warm commercial kitchen shelves with clean professional appearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAe3Lw3Qyx45u6pFGxS7J4CCPReuc4J84Mf5mZrlpKdspxqcrgDxFzP2C5cVtVSldMxIGkCDejdyO7j6gl6amtQDdnpWuRSiMUIvUaOoenfKykzSSc7VkZU58PBxRtvPAW0bNnX07GoKfv9wXK_9JnrCbOyfeL-8K5HLL0_M17n8RUbqmCBdZ2M3kbAEFRg-Guy_gSCa2_BfbklZ65Q_qQ8Nd_L-U3QoFTgGDERvJkfxOtUYRLTGoYLQ">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Sophia Miller</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Artisan Bakery Co</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Fri, Oct 27</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-medium">In Pipeline</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Scheduled Action</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Video Call</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Review inventory bookkeeping workflow demo &amp; integrate Square sales sync.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="bg-tertiary-container/10 text-tertiary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Qualified</span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Bookkeeping</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="mark-done-btn h-9 px-3 bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm rounded-xl flex items-center gap-1 transition-colors" data-task-id="4">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Done</span>
+</button>
+<button class="reschedule-btn h-9 px-3 bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm rounded-xl flex items-center gap-1 active:scale-95 transition-transform" data-task-id="4">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>Reschedule</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="followup-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all duration-200" data-bucket="upcoming" data-id="5">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-10 h-10 rounded-full object-cover flex-shrink-0" data-alt="Studio portrait of Priya Patel, wellness entrepreneur and studio director, smiling against clean neutral interior backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn9e2CceOpI0_hb3fY2X5M5OisGJulCiKqeQGe6oFMFvr0tTU3S9ChPvO0QOm4TFnPTasNJbx8QwhZYMhZRjEH1Tg402d2vCglqkrTfEH2lPbUl0uIBCqljRjcdJb8WvdWkiREHI6KAxuZmD75uJWB5sde9mSOT07DORppNSrcyvcyoRKGWc2zFAVWthP0pFmWSphG-WE7ZwkNdrK_HblWwrSyHNDQckt0iyq-H5uOmG0dn616cNd6gA">
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Priya Patel</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Spark Wellness Studio</span>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full font-semibold">Mon, Oct 30</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-medium">Discovery</span>
+</div>
+</div>
+<div class="bg-surface-container-low/70 rounded-xl p-3 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold tracking-wider">Scheduled Action</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Phone Call</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Introductory discovery call regarding quarterly tax estimates and contractor 1099 filing.
+        </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">New Lead</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-medium">Financial Advisory</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="mark-done-btn h-9 px-3 bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm rounded-xl flex items-center gap-1 transition-colors" data-task-id="5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Done</span>
+</button>
+<button class="reschedule-btn h-9 px-3 bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm rounded-xl flex items-center gap-1 active:scale-95 transition-transform" data-task-id="5">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+<span>Reschedule</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden initially) -->
+<div class="hidden flex-col items-center justify-center p-space-xl bg-surface-container-lowest rounded-xl shadow-sm my-space-md text-center" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-primary-container mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">task_alt</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">All caught up!</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+      No follow-ups pending in this view. Excellent work keeping client relationships active and timely.
+    </p>
+</div>
+<!-- Micro Toast Feedback -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full font-label-md text-label-md shadow-xl flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 z-50" id="toast">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">check_circle</span>
+<span id="toast-text">Follow-up updated</span>
+</div>
+</div>
+<script>
+  (function () {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.followup-card');
+    const emptyState = document.getElementById('empty-state');
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toast-text');
+    const countAll = document.getElementById('count-all');
+    const countToday = document.getElementById('count-today');
+    const countUpcoming = document.getElementById('count-upcoming');
+    const countCompleted = document.getElementById('count-completed');
+
+    let currentFilter = 'all';
+
+    function showToast(message) {
+      toastText.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2200);
+    }
+
+    function updateCounts() {
+      let allCount = 0;
+      let todayCount = 0;
+      let upcomingCount = 0;
+      let completedCount = 0;
+
+      cards.forEach(card => {
+        const isDone = card.getAttribute('data-completed') === 'true';
+        const bucket = card.getAttribute('data-bucket');
+
+        if (isDone) {
+          completedCount++;
+        } else {
+          allCount++;
+          if (bucket === 'today') todayCount++;
+          if (bucket === 'upcoming') upcomingCount++;
+        }
+      });
+
+      countAll.textContent = allCount;
+      countToday.textContent = todayCount;
+      countUpcoming.textContent = upcomingCount;
+      countCompleted.textContent = completedCount;
+    }
+
+    function applyFilter(filter) {
+      currentFilter = filter;
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const isDone = card.getAttribute('data-completed') === 'true';
+        const bucket = card.getAttribute('data-bucket');
+
+        let match = false;
+        if (filter === 'all' && !isDone) match = true;
+        if (filter === 'today' && !isDone && bucket === 'today') match = true;
+        if (filter === 'upcoming' && !isDone && bucket === 'upcoming') match = true;
+        if (filter === 'completed' && isDone) match = true;
+
+        if (match) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-primary-container', 'text-on-primary');
+          t.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        tab.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        tab.classList.add('bg-primary-container', 'text-on-primary');
+
+        const filter = tab.getAttribute('data-filter');
+        applyFilter(filter);
+      });
+    });
+
+    document.querySelectorAll('.mark-done-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = btn.closest('.followup-card');
+        const isCompleted = card.getAttribute('data-completed') === 'true';
+
+        if (!isCompleted) {
+          card.setAttribute('data-completed', 'true');
+          card.classList.add('opacity-60', 'scale-[0.98]');
+          btn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-tertiary">check</span> Completed`;
+          btn.classList.add('bg-tertiary/10', 'text-tertiary');
+          showToast('Marked follow-up as completed!');
+        } else {
+          card.removeAttribute('data-completed');
+          card.classList.remove('opacity-60', 'scale-[0.98]');
+          btn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span> Done`;
+          btn.classList.remove('bg-tertiary/10', 'text-tertiary');
+          showToast('Moved back to active list');
+        }
+
+        updateCounts();
+        setTimeout(() => applyFilter(currentFilter), 350);
+      });
+    });
+
+    document.querySelectorAll('.reschedule-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast('Reschedule modal opened (+2 business days)');
+      });
+    });
+
+    const scheduleBtn = document.getElementById('quick-schedule-btn');
+    if (scheduleBtn) {
+      scheduleBtn.addEventListener('click', () => {
+        showToast('New Follow-up composer ready');
+      });
+    }
+
+    updateCounts();
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md"><div class="h-20 px-gutter flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm">Dashboard</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="leads" href="#"><span class="material-symbols-outlined text-[24px]">group</span><span class="font-label-sm text-label-sm">Leads</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs transition-colors text-primary font-label-md" data-path="follow-ups" href="#"><span class="material-symbols-outlined text-[24px]">event_upcoming</span><span class="font-label-sm text-label-sm">Follow-ups</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[24px]">settings</span><span class="font-label-sm text-label-sm">Settings</span></a></div></nav></body></html>

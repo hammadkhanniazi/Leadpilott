@@ -1,0 +1,513 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#737686", "primary-container": "#2563eb", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container": "#e5eeff", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "on-primary-container": "#eeefff", "on-surface-variant": "#434655", "secondary-fixed-dim": "#bec6e0", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#bdffdc", "primary-fixed": "#dbe1ff", "tertiary-fixed": "#85f8c4", "on-background": "#0b1c30", "tertiary": "#006243", "primary": "#004ac6", "error-container": "#ffdad6", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "inverse-primary": "#b4c5ff", "tertiary-fixed-dim": "#68dba9", "inverse-surface": "#213145", "on-primary-fixed-variant": "#003ea8", "secondary-fixed": "#dae2fd", "surface-variant": "#d3e4fe", "on-tertiary-fixed": "#002114", "on-primary-fixed": "#00174b", "outline-variant": "#c3c6d7", "tertiary-container": "#007d57", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "surface-tint": "#0053db", "secondary-container": "#dae2fd", "on-tertiary-fixed-variant": "#005137", "on-surface": "#0b1c30", "surface-container-high": "#dce9ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-md": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-md": "0.75rem", "margin-md": "1.5rem", "margin-lg": "2rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "margin": "1rem" }, fontFamily: { "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "metric-num": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "metric-num": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="LeadPilot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy4O08IzTnS5ANZ1M6Lu2KIhbJ8pYjFB6kWcPV8lGmeVaV1VVrnRTaQTPjlG7X9AiHJVxgk1bevVu9cgrRGnsFfF-sCAyEMjoNQWZtE8itHAaUCkkxm4m7PoqSPqCDaXogP2Y-4RwbcCwuNdcNqcLDR4rz4V64Tkd2zFBymGnQ41aBhHrQjMTLAN5je1zhlFHIXhrzwrWgCx4kw0ah5EK7sJ1F5CgdmpoRmqWK631ezFjgi8lJEVV8_EXh"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">LeadPilot</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Leads</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors rounded-full"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOng8zeiFptHK96u0ZB1H0zDu3s0Yy30WnlWyN2DtfaKlQB262Ag2VpAR7nCjHjgFwIDuNu6eV_CNFHD38AnMU56CQVqBi3_t0jaKZdPZ4mRV3OPoEnJTwv-zA0qN0nqOC0BcwaIb1KBcvTs6p9LXz20I1hA1r0V1xBVzBnV96e6VWeSqhs24gqBDUEfRbw7fbyIqi3xJrF1_lj8LeBR163jln_UJlCmsz5I8wVX8UvIQur0VaOOhzg"></button></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-20"><div class="flex flex-col w-full px-gutter pb-6 gap-space-md">
+<!-- Top Title and Action Bar -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">All Leads</h1>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+        48 leads
+      </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Export Leads CSV" class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors shadow-sm active:scale-95" id="exportBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+<button class="flex items-center gap-1.5 h-10 px-3 rounded-xl bg-surface-container-high hover:bg-secondary-container text-primary font-label-md text-label-md font-semibold shadow-xs active:scale-95 transition-all" id="btn-find-leads-ai" type="button" onclick="const m = document.getElementById('ai-lead-search-modal'); if(m){ m.classList.remove('hidden'); m.classList.add('flex'); }" style="opacity: 0;"><span class="material-symbols-outlined text-[18px] text-primary">auto_awesome</span><span class="whitespace-nowrap">Find with AI</span></button><button class="flex items-center gap-1.5 h-10 px-3.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg shadow-sm active:scale-95 transition-all" id="addLeadBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="">Add Lead</span>
+</button>
+</div>
+</div>
+<!-- Interactive Search Input -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md shadow-sm outline-none focus:bg-surface-container-low transition-all" id="leadSearchInput" placeholder="Search by name, business, or email..." type="text">
+<button class="hidden absolute inset-y-0 right-0 pr-3 items-center text-outline hover:text-on-surface transition-colors" id="clearSearch" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Status Filter Pills (Horizontal Scroll) -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar -mx-gutter px-gutter py-1">
+<button class="status-chip active-filter flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-primary text-on-primary" data-filter="all" type="button">
+<span class="">All</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-on-primary text-[10px] font-bold">48</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="new" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="">New</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">12</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="qualified" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="">Qualified</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">23</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="contacted" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">Contacted</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">9</span>
+</button>
+<button class="status-chip flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap transition-all shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" data-filter="converted" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span class="">Converted</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-bold">4</span>
+</button>
+</div>
+<!-- Service Category Sub-Filter Chips -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar -mx-gutter px-gutter py-0.5">
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface font-semibold shadow-xs" data-service="all" type="button">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span class="">All Services</span>
+</button>
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-xs" data-service="bookkeeping" type="button">
+<span class="">Bookkeeping</span>
+</button>
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-xs" data-service="tax preparation" type="button">
+<span class="">Tax Preparation</span>
+</button>
+<button class="service-chip flex items-center gap-1 px-3 py-1 rounded-lg text-label-sm font-label-sm bg-surface-container-lowest text-on-surface-variant hover:text-on-surface shadow-xs" data-service="financial advisory" type="button">
+<span class="">Financial Advisory</span>
+</button>
+</div>
+<!-- Leads Cards Directory -->
+<div class="flex flex-col gap-space-sm pt-1" id="leadsListContainer">
+<!-- Lead Card 1: Marcus Vance -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Apex Logistics LLC" data-email="marcus@apexlogistics.com" data-name="Marcus Vance" data-service="bookkeeping" data-status="new">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            MV
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Marcus Vance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Apex Logistics LLC</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          New
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 border-t-0 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">receipt_long</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Bookkeeping</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">travel_explore</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Google Search</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Marcus Vance" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5552348901">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Marcus Vance" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:marcus@apexlogistics.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 2: Elena Rostova -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Northwind Dental Group" data-email="elena@northwinddental.com" data-name="Elena Rostova" data-service="tax preparation" data-status="qualified">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            ER
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Elena Rostova</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Northwind Dental Group</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Qualified
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">account_balance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tax Preparation</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">handshake</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Referral</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Elena Rostova" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5554567890">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Elena Rostova" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:elena@northwinddental.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 3: David Chen -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="CloudScale SaaS" data-email="d.chen@cloudscalesoftware.io" data-name="David Chen" data-service="financial advisory" data-status="contacted">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            DC
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">David Chen</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">CloudScale SaaS</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Contacted
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">trending_up</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Financial Advisory</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">share</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">LinkedIn</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call David Chen" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5557890123">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email David Chen" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:d.chen@cloudscalesoftware.io">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 4: Sophia Miller -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Artisan Bakery Co" data-email="sophia@artisanbakery.com" data-name="Sophia Miller" data-service="bookkeeping" data-status="qualified">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            SM
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Sophia Miller</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Artisan Bakery Co</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Qualified
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">receipt_long</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Bookkeeping</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">reviews</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Clutch.co</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Sophia Miller" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5553216549">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Sophia Miller" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:sophia@artisanbakery.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 5: Robert Jenkins -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Horizon Real Estate" data-email="rjenkins@horizonrealty.net" data-name="Robert Jenkins" data-service="tax preparation" data-status="converted">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-tertiary-container text-on-tertiary font-headline-sm text-headline-sm flex-shrink-0">
+            RJ
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Robert Jenkins</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Horizon Real Estate</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          Converted
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">account_balance</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Tax Preparation</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">web</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Website Form</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Robert Jenkins" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5558901234">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Robert Jenkins" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:rjenkins@horizonrealty.net">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lead Card 6: Priya Patel -->
+<div class="lead-card flex flex-col p-4 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all active:bg-surface-container-low" data-company="Spark Wellness Studio" data-email="priya@sparkwell.co" data-name="Priya Patel" data-service="financial advisory" data-status="new">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-primary-fixed text-on-primary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+            PP
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate leading-tight">Priya Patel</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Spark Wellness Studio</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold flex-shrink-0">
+          New
+        </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low p-2.5 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-outline text-[16px]">trending_up</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Financial Advisory</span>
+</div>
+<div class="flex items-center gap-1.5 min-w-0 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">groups</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Local Chamber</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-1">
+<div class="flex items-center gap-2">
+<a aria-label="Call Priya Patel" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-primary hover:bg-primary hover:text-on-primary transition-colors" href="tel:5556789012">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+<a aria-label="Email Priya Patel" class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-primary-container hover:text-on-primary transition-colors" href="mailto:priya@sparkwell.co">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+<div class="flex items-center gap-1 text-primary hover:text-on-primary-fixed-variant">
+<button class="font-label-lg text-label-lg font-semibold py-1 px-2.5 rounded-md hover:bg-surface-container-high transition-colors" type="button">
+            View / Edit
+          </button>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center p-8 text-center bg-surface-container-lowest rounded-xl shadow-sm mt-2" id="leadsEmptyState">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary mb-3">
+<span class="material-symbols-outlined text-[28px]">search_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">No leads found</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-[240px]">
+        Try adjusting your search terms or clearing your status filters.
+      </p>
+<button class="mt-4 px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" id="resetFiltersBtn" type="button">
+        Reset All Filters
+      </button>
+</div>
+</div>
+<!-- Pagination / Footer Info -->
+<div class="flex items-center justify-between pt-3 pb-2 px-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="showingCountText">
+      Showing <span class="font-semibold text-on-surface">6</span> of 48 leads
+    </span>
+<div class="flex items-center gap-1">
+<button aria-label="Previous Page" class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-low text-outline opacity-40 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 font-label-sm text-label-sm font-semibold text-on-surface">1</span>
+<button aria-label="Next Page" class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface shadow-xs active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Toast / Quick Feedback Notification Container -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-200" id="toastNotification">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">check_circle</span>
+<span class="font-label-md text-label-md" id="toastMsg">Export ready! Downloading CSV...</span>
+</div>
+</div>
+<script>
+  (function initDirectoryInteractions() {
+    const searchInput = document.getElementById('leadSearchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    const statusChips = document.querySelectorAll('.status-chip');
+    const serviceChips = document.querySelectorAll('.service-chip');
+    const leadCards = document.querySelectorAll('.lead-card');
+    const emptyState = document.getElementById('leadsEmptyState');
+    const showingCount = document.getElementById('showingCountText');
+    const exportBtn = document.getElementById('exportBtn');
+    const addLeadBtn = document.getElementById('addLeadBtn');
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMsg');
+
+    let currentStatus = 'all';
+    let currentService = 'all';
+    let currentQuery = '';
+
+    function showToast(message) {
+      if (!toast) return;
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-2');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2600);
+    }
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      leadCards.forEach(card => {
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        const company = (card.getAttribute('data-company') || '').toLowerCase();
+        const email = (card.getAttribute('data-email') || '').toLowerCase();
+        const status = (card.getAttribute('data-status') || '').toLowerCase();
+        const service = (card.getAttribute('data-service') || '').toLowerCase();
+
+        const matchesQuery = !currentQuery || 
+          name.includes(currentQuery) || 
+          company.includes(currentQuery) || 
+          email.includes(currentQuery);
+
+        const matchesStatus = currentStatus === 'all' || status === currentStatus;
+        const matchesService = currentService === 'all' || service === currentService;
+
+        if (matchesQuery && matchesStatus && matchesService) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+
+      if (showingCount) {
+        showingCount.innerHTML = `Showing <span class="font-semibold text-on-surface">${visibleCount}</span> of 48 leads`;
+      }
+    }
+
+    // Search events
+    searchInput?.addEventListener('input', (e) => {
+      currentQuery = e.target.value.trim().toLowerCase();
+      if (currentQuery.length > 0) {
+        clearSearch?.classList.remove('hidden');
+        clearSearch?.classList.add('flex');
+      } else {
+        clearSearch?.classList.add('hidden');
+        clearSearch?.classList.remove('flex');
+      }
+      applyFilters();
+    });
+
+    clearSearch?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      currentQuery = '';
+      clearSearch.classList.add('hidden');
+      clearSearch.classList.remove('flex');
+      applyFilters();
+    });
+
+    // Status chip buttons
+    statusChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        statusChips.forEach(c => {
+          c.classList.remove('bg-primary', 'text-on-primary');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary', 'text-on-primary');
+        chip.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        currentStatus = chip.getAttribute('data-filter') || 'all';
+        applyFilters();
+      });
+    });
+
+    // Service chip buttons
+    serviceChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        serviceChips.forEach(c => {
+          c.classList.remove('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-surface-container-high', 'text-on-surface', 'font-semibold');
+        chip.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+        currentService = chip.getAttribute('data-service') || 'all';
+        applyFilters();
+      });
+    });
+
+    // Reset button
+    resetFiltersBtn?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      currentQuery = '';
+      clearSearch?.classList.add('hidden');
+
+      statusChips[0]?.click();
+      serviceChips[0]?.click();
+    });
+
+    // Export & Add Lead Toast triggers
+    exportBtn?.addEventListener('click', () => {
+      showToast('Exporting 48 leads to CSV...');
+    });
+
+    addLeadBtn?.addEventListener('click', () => {
+      showToast('Opening new lead intake modal...');
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-label-md"><div class="h-20 px-gutter flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm">Dashboard</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs transition-colors text-primary font-label-md" data-path="leads" href="#"><span class="material-symbols-outlined text-[24px]">group</span><span class="font-label-sm text-label-sm">Leads</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="follow-ups" href="#"><span class="material-symbols-outlined text-[24px]">event_upcoming</span><span class="font-label-sm text-label-sm">Follow-ups</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-space-xs text-on-surface-variant hover:text-primary transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[24px]">settings</span><span class="font-label-sm text-label-sm">Settings</span></a></div></nav>
+
+<div class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-on-surface/40 backdrop-blur-sm transition-opacity duration-200" id="ai-lead-search-modal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle"><div class="w-full max-w-lg max-h-[90vh] bg-surface-container-lowest rounded-t-2xl sm:rounded-2xl shadow-xl flex flex-col overflow-hidden animate-in slide-in-from-bottom duration-200"><div class="flex items-center justify-between px-5 py-4 border-b border-surface-container"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">auto_awesome</span></div><div><h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight" id="aiModalTitle">Find Leads with AI</h2><p class="font-label-sm text-label-sm text-on-surface-variant">Search publicly available verified contact info</p></div></div><button type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="closeAiModalBtn" aria-label="Close dialog" onclick="const m = document.getElementById('ai-lead-search-modal'); if(m){ m.classList.add('hidden'); m.classList.remove('flex'); }"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="flex border-b border-surface-container bg-surface-container-low px-5 gap-4"><button type="button" class="py-2.5 text-label-md font-semibold border-b-2 border-primary text-primary transition-all flex items-center gap-1.5" id="tabSearchConfig" onclick="document.getElementById('aiSearchStepForm').classList.remove('hidden'); document.getElementById('aiSearchStepForm').classList.add('flex'); document.getElementById('aiDiscoveredReviewStep').classList.add('hidden'); document.getElementById('aiDiscoveredReviewStep').classList.remove('flex'); this.className='py-2.5 text-label-md font-semibold border-b-2 border-primary text-primary transition-all flex items-center gap-1.5'; document.getElementById('tabDiscoveredReview').className='py-2.5 text-label-md font-medium text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5'; document.getElementById('executeAiSearchBtn').classList.remove('hidden'); document.getElementById('importDiscoveredBtn').classList.add('hidden');"><span class="">1. Search Criteria</span></button><button type="button" class="py-2.5 text-label-md font-medium text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" id="tabDiscoveredReview" onclick="document.getElementById('aiSearchStepForm').classList.add('hidden'); document.getElementById('aiSearchStepForm').classList.remove('flex'); document.getElementById('aiDiscoveredReviewStep').classList.remove('hidden'); document.getElementById('aiDiscoveredReviewStep').classList.add('flex'); this.className='py-2.5 text-label-md font-semibold border-b-2 border-primary text-primary transition-all flex items-center gap-1.5'; document.getElementById('tabSearchConfig').className='py-2.5 text-label-md font-medium text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5'; document.getElementById('executeAiSearchBtn').classList.add('hidden'); document.getElementById('importDiscoveredBtn').classList.remove('hidden');"><span class="">2. Discovered Leads</span><span class="px-1.5 py-0.2 rounded-full bg-primary-fixed text-primary text-[10px] font-bold" id="discoveredBadgeCount">2</span></button></div><div class="overflow-y-auto px-5 py-4 flex-1 flex flex-col gap-4"><div id="aiSearchStepForm" class="flex flex-col gap-4"><div><label class="block font-label-sm text-label-sm font-semibold text-on-surface mb-1.5" for="aiSearchQuery">Target Prospect or Business Query <span class="text-error">*</span></label><input type="text" id="aiSearchQuery" placeholder="e.g. Dental practice owners looking for bookkeeping" value="Dental practice owners looking for bookkeeping" class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest border border-outline-variant/50 focus:border-primary transition-all"></div><div><label class="block font-label-sm text-label-sm font-semibold text-on-surface mb-1.5" for="aiSearchLocation">Target Location (Optional)</label><input type="text" id="aiSearchLocation" placeholder="e.g. Chicago, IL or Greater Midwest" value="Chicago, IL" class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest border border-outline-variant/50 focus:border-primary transition-all"></div><div><label class="block font-label-sm text-label-sm font-semibold text-on-surface mb-1.5">Platform &amp; Verified Sources</label><div class="flex flex-wrap gap-2"><button type="button" class="ai-source-chip flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-label-sm bg-primary text-on-primary font-medium transition-all shadow-xs" data-source="linkedin"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span><span class="">LinkedIn (API)</span></button><button type="button" class="ai-source-chip flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-label-sm bg-primary text-on-primary font-medium transition-all shadow-xs" data-source="web"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span><span class="">Company Websites</span></button><button type="button" class="ai-source-chip flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-label-sm bg-primary text-on-primary font-medium transition-all shadow-xs" data-source="google"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span><span class="">Google Search</span></button><button type="button" class="ai-source-chip flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-label-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface font-medium transition-all border border-outline-variant/40" data-source="directories"><span class="w-2 h-2 rounded-full bg-outline"></span><span class="">Business Directories</span></button><button type="button" class="ai-source-chip flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-label-sm bg-surface-container-low text-on-surface-variant hover:text-on-surface font-medium transition-all border border-outline-variant/40" data-source="indeed"><span class="w-2 h-2 rounded-full bg-outline"></span><span class="">Indeed Jobs</span></button></div></div><div class="flex items-center justify-between pt-1"><div class="flex flex-col"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Number of leads to fetch</span><span class="font-body-sm text-body-sm text-on-surface-variant">Maximum batch per search</span></div><div class="flex items-center gap-2"><select id="aiLeadsCountSelect" class="h-9 px-3 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md border border-outline-variant/50 outline-none"><option value="5">5 leads</option><option value="10" selected="">10 leads</option><option value="25">25 leads</option></select></div></div><div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/40 flex items-start gap-2.5"><span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">bolt</span><div class="text-label-sm leading-relaxed"><span class="font-semibold text-on-surface">Prepared for n8n AI webhook workflow:</span><span class="text-on-surface-variant"> Discovers public Name, Email, Phone, and Website only. Strictly zero hallucinated contact data.</span></div></div></div><div id="aiDiscoveredReviewStep" class="hidden flex-col gap-3"><div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg"><div class="flex items-center gap-2"><input type="checkbox" id="selectAllDiscovered" checked="" class="w-4 h-4 rounded text-primary accent-primary cursor-pointer"><label for="selectAllDiscovered" class="font-label-sm text-label-sm font-semibold text-on-surface cursor-pointer">Select All Discovered Leads (2)</label></div><span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">verified</span> Webhook Ready</span></div><div class="discovered-card p-3 rounded-xl border border-outline-variant/60 bg-surface-container-lowest shadow-xs flex flex-col gap-2.5"><div class="flex items-start justify-between gap-2"><div class="flex items-center gap-2.5"><input type="checkbox" checked="" class="discovered-lead-checkbox w-4 h-4 rounded text-primary accent-primary" data-lead-name="Dr. Julian Scott" data-company="Scott Family Orthodontics" data-email="j.scott@scottortho.com" data-phone="3125550192" data-website="https://scottortho.com"><div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-semibold text-label-sm">JS</div><div><h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface leading-tight">Dr. Julian Scott</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Scott Family Orthodontics</p></div></div><span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">✓ Unique</span></div><div class="grid grid-cols-2 gap-2 p-2 bg-surface-container-low rounded-lg text-body-sm"><div class="flex flex-col min-w-0"><span class="font-label-sm text-[11px] text-outline font-medium">EMAIL</span><span class="text-on-surface truncate font-mono text-[12px]">j.scott@scottortho.com</span></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-[11px] text-outline font-medium">PHONE</span><span class="text-on-surface truncate font-mono text-[12px]">(312) 555-0192</span></div><div class="flex flex-col min-w-0 col-span-2"><span class="font-label-sm text-[11px] text-outline font-medium">WEBSITE</span><a href="https://scottortho.com" target="_blank" class="text-primary hover:underline truncate font-mono text-[12px]">https://scottortho.com</a></div></div></div><div class="discovered-card p-3 rounded-xl border border-outline-variant/60 bg-surface-container-lowest shadow-xs flex flex-col gap-2.5"><div class="flex items-start justify-between gap-2"><div class="flex items-center gap-2.5"><input type="checkbox" checked="" class="discovered-lead-checkbox w-4 h-4 rounded text-primary accent-primary" data-lead-name="Claire Montgomery" data-company="Apex Logistics LLC" data-email="" data-phone="" data-website="https://apexlogistics.com"><div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-semibold text-label-sm">CM</div><div><h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface leading-tight">Claire Montgomery</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Apex Logistics LLC</p></div></div><span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">⚠️ Potential Duplicate</span></div><div class="grid grid-cols-2 gap-2 p-2 bg-surface-container-low rounded-lg text-body-sm"><div class="flex flex-col min-w-0"><span class="font-label-sm text-[11px] text-outline font-medium">EMAIL</span><span class="text-outline italic text-[12px]">Not publicly listed</span></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-[11px] text-outline font-medium">PHONE</span><span class="text-outline italic text-[12px]">Not publicly listed</span></div><div class="flex flex-col min-w-0 col-span-2"><span class="font-label-sm text-[11px] text-outline font-medium">WEBSITE</span><a href="https://apexlogistics.com" target="_blank" class="text-primary hover:underline truncate font-mono text-[12px]">https://apexlogistics.com</a></div></div></div></div></div><div class="px-5 py-4 bg-surface-container-low border-t border-surface-container flex items-center justify-between gap-3"><button type="button" class="px-4 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" id="cancelAiModalBtn" onclick="const m = document.getElementById('ai-lead-search-modal'); if(m){ m.classList.add('hidden'); m.classList.remove('flex'); }">Cancel</button><div class="flex items-center gap-2"><button type="button" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm active:scale-95 transition-all" id="executeAiSearchBtn" onclick="document.getElementById('tabDiscoveredReview').click(); const toast = document.getElementById('toastNotification'); const toastMsg = document.getElementById('toastMsg'); if(toast &amp;&amp; toastMsg){ toastMsg.textContent = 'n8n AI Workflow: 2 verified public leads discovered!'; toast.classList.remove('opacity-0', 'pointer-events-none'); toast.classList.add('opacity-100'); setTimeout(() =&gt; { toast.classList.add('opacity-0', 'pointer-events-none'); toast.classList.remove('opacity-100'); }, 2600); }"><span class="material-symbols-outlined text-[18px]">search</span><span class="">Start AI Search</span></button><button type="button" class="hidden flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-label-md text-label-md shadow-sm active:scale-95 transition-all" id="importDiscoveredBtn" onclick="const m = document.getElementById('ai-lead-search-modal'); if(m){ m.classList.add('hidden'); m.classList.remove('flex'); } const toast = document.getElementById('toastNotification'); const toastMsg = document.getElementById('toastMsg'); if(toast &amp;&amp; toastMsg){ toastMsg.textContent = 'Populating selected lead into Add Lead intake form...'; toast.classList.remove('opacity-0', 'pointer-events-none'); toast.classList.add('opacity-100'); setTimeout(() =&gt; { toast.classList.add('opacity-0', 'pointer-events-none'); toast.classList.remove('opacity-100'); }, 2600); }"><span class="material-symbols-outlined text-[18px]">person_add</span><span id="importBtnLabel" class="">Populate in Add Lead Form (2)</span></button></div></div></div></div></body></html>

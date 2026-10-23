@@ -1,0 +1,300 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "outline": "#737686", "primary-container": "#2563eb", "on-primary": "#ffffff", "background": "#f8f9ff", "surface-dim": "#cbdbf5", "surface-container": "#e5eeff", "inverse-on-surface": "#eaf1ff", "surface-container-low": "#eff4ff", "on-primary-container": "#eeefff", "on-surface-variant": "#434655", "secondary-fixed-dim": "#bec6e0", "on-tertiary": "#ffffff", "primary-fixed-dim": "#b4c5ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface": "#f8f9ff", "on-secondary-fixed-variant": "#3f465c", "on-tertiary-container": "#bdffdc", "primary-fixed": "dbe1ff", "tertiary-fixed": "#85f8c4", "on-background": "#0b1c30", "tertiary": "#006243", "primary": "#004ac6", "error-container": "#ffdad6", "on-secondary-container": "#5c647a", "on-secondary-fixed": "#131b2e", "inverse-primary": "#b4c5ff", "tertiary-fixed-dim": "#68dba9", "inverse-surface": "#213145", "on-primary-fixed-variant": "#003ea8", "secondary-fixed": "#dae2fd", "surface-variant": "#d3e4fe", "on-tertiary-fixed": "#002114", "on-primary-fixed": "#00174b", "outline-variant": "#c3c6d7", "tertiary-container": "#007d57", "secondary": "#565e74", "on-error-container": "#93000a", "surface-bright": "#f8f9ff", "surface-container-lowest": "#ffffff", "surface-container-highest": "#d3e4fe", "on-error": "#ffffff", "surface-tint": "#0053db", "secondary-container": "#dae2fd", "on-tertiary-fixed-variant": "#005137", "on-surface": "#0b1c30", "surface-container-high": "#dce9ff" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter-md": "1.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-md": "0.75rem", "margin-md": "1.5rem", "margin-lg": "2rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "margin": "1rem" }, fontFamily: { "body-sm": ["Inter"], "headline-md": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "metric-num": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "metric-num": ["20px", { "lineHeight": "24px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] flex items-center justify-center -ml-space-xs text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="LeadPilot Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vy4O08IzTnS5ANZ1M6Lu2KIhbJ8pYjFB6kWcPV8lGmeVaV1VVrnRTaQTPjlG7X9AiHJVxgk1bevVu9cgrRGnsFfF-sCAyEMjoNQWZtE8itHAaUCkkxm4m7PoqSPqCDaXogP2Y-4RwbcCwuNdcNqcLDR4rz4V64Tkd2zFBymGnQ41aBhHrQjMTLAN5je1zhlFHIXhrzwrWgCx4kw0ah5EK7sJ1F5CgdmpoRmqWK631ezFjgi8lJEVV8_EXh"><h1 class="font-headline-sm text-headline-sm text-on-surface ml-space-xs">New Lead</h1></div><div class="flex items-center gap-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwOng8zeiFptHK96u0ZB1H0zDu3s0Yy30WnlWyN2DtfaKlQB262Ag2VpAR7nCjHjgFwIDuNu6eV_CNFHD38AnMU56CQVqBi3_t0jaKZdPZ4mRV3OPoEnJTwv-zA0qN0nqOC0BcwaIb1KBcvTs6p9LXz20I1hA1r0V1xBVzBnV96e6VWeSqhs24gqBDUEfRbw7fbyIqi3xJrF1_lj8LeBR163jln_UJlCmsz5I8wVX8UvIQur0VaOOhzg"></div></div></header><main class="flex-1 w-full bg-surface pt-16"><div class="flex flex-col w-full pb-32">
+<div class="px-gutter pt-space-md pb-space-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Client Intake</span>
+</div>
+<button class="font-label-md text-label-md text-secondary hover:text-on-surface px-space-sm py-1.5 rounded-full hover:bg-surface-container-high transition-colors" onclick="history.back()" type="button">
+        Cancel
+      </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+      Enter client contact information and advisory service requirements to seed onboarding workflows.
+    </p>
+</div>
+<div class="px-gutter mb-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-11 h-11 rounded-lg overflow-hidden bg-surface-container-high flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A refined business professional reviewing financial statements on a tablet in an architecturally minimalist corporate advisory lounge with soft ambient dawn light, muted blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqjLjgVLz0f7wdM8yYlI0PxNnqbD5dGuePF_jbS3E3aEDUsdyirEoptMczo7hxyjQeUrAS7h5onJl4RAaX6qWM6O9Rw7Ct0AVEw8lKMyr3TtIQJ3mhtgAmgzULmDpXd0ci37rB640EULjD1j2Z6xRA1kmuNtEhBDb2kkc9MyR4Xsysz5DSaIWZIjAakJHSrpehr5AQakU6wqWHchF4kRjde4_6nn7bDuSvF030O-72yGyK0HlCqRTxGw">
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Fast-Track Mode</span>
+<span class="inline-flex w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Auto-assigns advisor and notification queue</p>
+</div>
+</div>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm active:scale-95 transition-transform flex items-center gap-1" id="smart-fill-btn" onclick="prefillSampleData()" type="button">
+<span class="material-symbols-outlined text-[16px]">magic_button</span>
+<span>Fill Demo</span>
+</button>
+</div>
+</div>
+<form class="px-gutter flex flex-col gap-space-lg" id="add-lead-form" onsubmit="event.preventDefault(); submitLead();">
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2 pb-1 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<h2 class="font-headline-sm text-headline-sm">Client Essentials</h2>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between" for="contact-name">
+<span>Contact Name <span class="text-error">*</span></span>
+<span class="text-outline font-label-sm text-label-sm">Primary Decision Maker</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">person</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" id="contact-name" name="contactName" placeholder="Marcus Vance" required="" type="text">
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between" for="business-name">
+<span>Business Name <span class="text-error">*</span></span>
+<span class="text-outline font-label-sm text-label-sm">Registered Entity</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">domain</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" id="business-name" name="businessName" placeholder="Apex Logistics LLC" required="" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="email-address">
+            Email Address <span class="text-error">*</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">mail</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" id="email-address" name="email" placeholder="marcus@apexlogistics.com" required="" type="email">
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant" for="phone-number">
+            Phone Number
+          </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">call</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" id="phone-number" name="phone" placeholder="(555) 234-8901" type="tel">
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<h2 class="font-headline-sm text-headline-sm">Service Scope</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Multi-select</span>
+</div>
+<div class="grid grid-cols-2 gap-2" id="service-options">
+<label class="relative flex items-center gap-2 p-3 rounded-xl bg-primary-container text-on-primary cursor-pointer transition-all shadow-sm">
+<input checked="" class="sr-only peer" name="services" type="checkbox" value="Bookkeeping">
+<div class="w-5 h-5 rounded-md bg-white/20 flex items-center justify-center text-white peer-checked:bg-white peer-checked:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-lg text-label-lg">Bookkeeping</span>
+</label>
+<label class="relative flex items-center gap-2 p-3 rounded-xl bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="sr-only peer" name="services" type="checkbox" value="Accounting">
+<div class="w-5 h-5 rounded-md bg-surface-container-highest flex items-center justify-center text-transparent peer-checked:text-primary peer-checked:bg-white transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-lg text-label-lg">Accounting</span>
+</label>
+<label class="relative flex items-center gap-2 p-3 rounded-xl bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="sr-only peer" name="services" type="checkbox" value="Tax Preparation">
+<div class="w-5 h-5 rounded-md bg-surface-container-highest flex items-center justify-center text-transparent peer-checked:text-primary peer-checked:bg-white transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-lg text-label-lg">Tax Prep</span>
+</label>
+<label class="relative flex items-center gap-2 p-3 rounded-xl bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-all">
+<input class="sr-only peer" name="services" type="checkbox" value="Financial Advisory">
+<div class="w-5 h-5 rounded-md bg-surface-container-highest flex items-center justify-center text-transparent peer-checked:text-primary peer-checked:bg-white transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-lg text-label-lg">Advisory</span>
+</label>
+</div>
+<div class="flex flex-col gap-1.5 pt-1">
+<label class="font-label-md text-label-md text-on-surface-variant flex items-center justify-between" for="acquisition-url">
+<span>Acquisition Channel / URL</span>
+<span class="text-outline font-label-sm text-label-sm">Attribution tracking</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-secondary text-[20px] pointer-events-none">link</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" id="acquisition-url" name="acquisitionChannel" placeholder="https://google.com/search?q=cpa+bookkeeping" type="text">
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">flag</span>
+<h2 class="font-headline-sm text-headline-sm">Lead Status</h2>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Pipeline Stage
+        </span>
+</div>
+<div class="flex flex-wrap gap-2" id="status-chips-container">
+<label class="cursor-pointer">
+<input checked="" class="sr-only peer" name="status" type="radio" value="New">
+<span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full font-label-sm text-label-sm bg-surface-container-high text-on-surface peer-checked:bg-primary-container peer-checked:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[14px]">star</span>
+            New Lead
+          </span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="status" type="radio" value="Qualified">
+<span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant peer-checked:bg-tertiary peer-checked:text-on-tertiary transition-all">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Qualified
+          </span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="status" type="radio" value="Contacted">
+<span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-all">
+<span class="material-symbols-outlined text-[14px]">outgoing_mail</span>
+            Contacted
+          </span>
+</label>
+<label class="cursor-pointer">
+<input class="sr-only peer" name="status" type="radio" value="Converted">
+<span class="inline-flex items-center gap-1.5 px-3 py-2 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant peer-checked:bg-on-tertiary-container peer-checked:text-tertiary-container transition-all">
+<span class="material-symbols-outlined text-[14px]">handshake</span>
+            Converted
+          </span>
+</label>
+</div>
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface-variant" for="initial-notes">Initial Advisory Notes</label>
+<span class="font-label-sm text-label-sm text-outline" id="note-char-count">104 / 500</span>
+</div>
+<div class="relative">
+<textarea class="w-full p-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none leading-relaxed" id="initial-notes" maxlength="500" name="notes" oninput="document.getElementById('note-char-count').textContent = this.value.length + ' / 500'" rows="3">Client needs backlog clean-up for Q1-Q3 and ongoing monthly reconciliations in QuickBooks Online.</textarea>
+</div>
+</div>
+</section>
+</form>
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/90 backdrop-blur-md px-gutter py-space-sm pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
+<div class="max-w-md mx-auto flex items-center gap-space-sm">
+<button class="h-12 px-space-md rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high active:scale-95 transition-all flex items-center justify-center" onclick="history.back()" type="button">
+        Cancel
+      </button>
+<button class="flex-1 h-12 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm tracking-wide shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2" id="save-lead-btn" onclick="submitLead()" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Save Lead</span>
+</button>
+</div>
+</div>
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 transform -translate-y-10 opacity-0 pointer-events-none transition-all duration-300" id="toast-notification">
+<div class="bg-inverse-surface text-inverse-on-surface px-space-md py-2.5 rounded-full shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-text">Lead created successfully</span>
+</div>
+</div>
+</div>
+<script>
+  function setupCheckboxCardBehaviors() {
+    const serviceLabels = document.querySelectorAll('#service-options label');
+    serviceLabels.forEach(label => {
+      const input = label.querySelector('input[type="checkbox"]');
+      input.addEventListener('change', () => {
+        if (input.checked) {
+          label.className = "relative flex items-center gap-2 p-3 rounded-xl bg-primary-container text-on-primary cursor-pointer transition-all shadow-sm";
+          const iconBox = label.querySelector('div');
+          iconBox.className = "w-5 h-5 rounded-md bg-white/20 flex items-center justify-center text-white transition-colors";
+        } else {
+          label.className = "relative flex items-center gap-2 p-3 rounded-xl bg-surface-container text-on-surface cursor-pointer hover:bg-surface-container-high transition-all";
+          const iconBox = label.querySelector('div');
+          iconBox.className = "w-5 h-5 rounded-md bg-surface-container-highest flex items-center justify-center text-transparent transition-colors";
+        }
+      });
+    });
+  }
+
+  function prefillSampleData() {
+    const contactInput = document.getElementById('contact-name');
+    const businessInput = document.getElementById('business-name');
+    const emailInput = document.getElementById('email-address');
+    const phoneInput = document.getElementById('phone-number');
+    const urlInput = document.getElementById('acquisition-url');
+    const notesInput = document.getElementById('initial-notes');
+
+    contactInput.value = 'Marcus Vance';
+    businessInput.value = 'Apex Logistics LLC';
+    emailInput.value = 'marcus@apexlogistics.com';
+    phoneInput.value = '(555) 234-8901';
+    urlInput.value = 'https://google.com/search?q=cpa+bookkeeping';
+    notesInput.value = 'Client needs backlog clean-up for Q1-Q3 and ongoing monthly reconciliations in QuickBooks Online.';
+    
+    document.getElementById('note-char-count').textContent = notesInput.value.length + ' / 500';
+
+    showToast('Demo client data populated');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast-notification');
+    const toastText = document.getElementById('toast-text');
+    if (toast && toastText) {
+      toastText.textContent = msg;
+      toast.classList.remove('opacity-0', '-translate-y-10', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-10', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2600);
+    }
+  }
+
+  function submitLead() {
+    const form = document.getElementById('add-lead-form');
+    const contact = document.getElementById('contact-name').value.trim();
+    const business = document.getElementById('business-name').value.trim();
+    const email = document.getElementById('email-address').value.trim();
+
+    if (!contact || !business || !email) {
+      showToast('Please fill required client fields');
+      return;
+    }
+
+    const btn = document.getElementById('save-lead-btn');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span>Saving...</span>';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Saved!</span>';
+      btn.classList.remove('bg-primary-container');
+      btn.classList.add('bg-tertiary');
+      showToast('Marcus Vance added to pipeline');
+      setTimeout(() => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          btn.classList.add('bg-primary-container');
+          btn.classList.remove('bg-tertiary');
+        }
+      }, 900);
+    }, 700);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupCheckboxCardBehaviors();
+  });
+  setupCheckboxCardBehaviors();
+</script></main></body></html>
