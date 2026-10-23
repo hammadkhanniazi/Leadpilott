@@ -232,6 +232,136 @@ app.post('/api/auth/reset-password', (req: Request, res: Response) => {
   });
 });
 
+// Designated Initial Administrator Setup Endpoint
+// Securely verifies the exact designated admin email, ensures Firebase Auth and database record exist,
+// and sends an official Firebase action code email link to sanwalniaxii321@gmail.com so the administrator
+// can choose their own permanent password without exposing credentials.
+const BOOTSTRAP_ADMIN_EMAIL = 'sanwalniaxii321@gmail.com';
+
+app.get('/api/admin/status', (_req: Request, res: Response) => {
+  const admin = db.users.find((u) => u.email.toLowerCase() === BOOTSTRAP_ADMIN_EMAIL);
+  return res.json({
+    designatedAdminEmail: BOOTSTRAP_ADMIN_EMAIL,
+    isConfigured: Boolean(admin && admin.role === 'admin' && admin.approvalStatus === 'approved'),
+    adminName: admin?.name || 'Sanwal Niaz',
+  });
+});
+
+app.post('/api/admin/initial-setup', async (req: Request, res: Response) => {
+  try {
+    const requestedEmail = (req.body?.email || BOOTSTRAP_ADMIN_EMAIL).trim().toLowerCase();
+
+    // Security: strictly reject setup for any email other than the designated admin
+    if (requestedEmail !== BOOTSTRAP_ADMIN_EMAIL) {
+      return res.status(403).json({
+        error: 'Initial administrator setup is strictly restricted to the designated administrator account (sanwalniaxii321@gmail.com).',
+      });
+    }
+
+    // 1. Read Firebase applet configuration
+    const configPath = path.resolve(process.cwd(), 'firebase-applet-config.json');
+    let firebaseConfig: any = {};
+    if (fs.existsSync(configPath)) {
+      try {
+        firebaseConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      } catch (e) {
+        console.warn('Could not read firebase-applet-config.json:', e);
+      }
+    }
+
+    const apiKey = firebaseConfig.apiKey || process.env.VITE_FIREBASE_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'Firebase API key configuration is missing.' });
+    }
+
+    // 2. Ensure user exists in Firebase Authentication and dispatch password reset/setup link
+    let oobRes = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${apiKey}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        requestType: 'PASSWORD_RESET',
+        email: BOOTSTRAP_ADMIN_EMAIL,
+      }),
+    });
+
+    let oobData: any = await oobRes.json();
+
+    // If account does not exist in Firebase Auth yet, securely create it first without setting a hardcoded password
+    if (!oobRes.ok && oobData?.error?.message === 'EMAIL_NOT_FOUND') {
+      const signUpRes = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: BOOTSTRAP_ADMIN_EMAIL,
+          returnSecureToken: true,
+        }),
+      });
+
+      if (!signUpRes.ok) {
+        const signUpError = await signUpRes.json();
+        console.error('Failed creating admin account in Firebase Auth:', signUpError);
+      } else {
+        // Retry sending oobCode setup link
+        oobRes = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${apiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            requestType: 'PASSWORD_RESET',
+            email: BOOTSTRAP_ADMIN_EMAIL,
+          }),
+        });
+        oobData = await oobRes.json();
+      }
+    }
+
+    // 3. Ensure canonical admin profile exists in backend store with admin role & approved status
+    let adminUser = db.users.find((u) => u.email.toLowerCase() === BOOTSTRAP_ADMIN_EMAIL);
+    if (adminUser) {
+      adminUser.role = 'admin';
+      adminUser.approvalStatus = 'approved';
+      adminUser.title = 'Managing Director & Systems Admin';
+      adminUser.department = adminUser.department || 'Corporate Advisory';
+    } else {
+      adminUser = {
+        id: 'user-admin',
+        name: 'Sanwal Niaz',
+        email: BOOTSTRAP_ADMIN_EMAIL,
+        role: 'admin',
+        approvalStatus: 'approved',
+        title: 'Managing Director & Systems Admin',
+        department: 'Corporate Advisory',
+        companyId: 'firm-leadpilot',
+        createdAt: new Date().toISOString(),
+      };
+      db.users.push(adminUser);
+    }
+
+    persistDb();
+    broadcast('user_updated', adminUser);
+
+    // 4. Record audit notification
+    dispatchAutomatedEmail({
+      type: 'urgent_alert',
+      recipientEmail: BOOTSTRAP_ADMIN_EMAIL,
+      recipientName: adminUser.name,
+      subject: 'LeadPilot CRM Initial Administrator Setup Initiated',
+      preview: 'Firebase password setup workflow triggered for primary administrator.',
+      body: `Hello ${adminUser.name},\n\nThe initial administrator setup workflow was triggered for ${BOOTSTRAP_ADMIN_EMAIL}.\nA secure Firebase password action link has been dispatched to this inbox.\nFollow the link in your email to choose your permanent password, and then log in directly to LeadPilot CRM.`,
+    });
+
+    return res.json({
+      success: true,
+      email: BOOTSTRAP_ADMIN_EMAIL,
+      message: `A secure initial password setup link has been dispatched to ${BOOTSTRAP_ADMIN_EMAIL}. Check your email to set your permanent password, then return here to sign in.`,
+    });
+  } catch (error: any) {
+    console.error('Admin initial setup error:', error);
+    return res.status(500).json({
+      error: error?.message || 'Failed to complete initial administrator setup process.',
+    });
+  }
+});
+
 app.get('/api/users', (_req: Request, res: Response) => {
   return res.json(db.users);
 });

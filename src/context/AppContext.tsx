@@ -23,7 +23,17 @@ import {
 import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
 import { isValidUserPhoto } from '../components/UserAvatar';
 
-const BOOTSTRAP_ADMIN_EMAIL = 'sanwalniaxii321@gmail.com';
+export const BOOTSTRAP_ADMIN_EMAIL = 'sanwalniaxii321@gmail.com';
+
+export function cleanDocData<T extends Record<string, any>>(obj: T): Partial<T> {
+  const clean: any = {};
+  for (const [key, value] of Object.entries(obj)) {
+    if (value !== undefined) {
+      clean[key] = value;
+    }
+  }
+  return clean;
+}
 
 interface AppContextType {
   currentUser: User | null;
@@ -67,6 +77,7 @@ interface AppContextType {
     department?: string
   ) => Promise<{ success: boolean; error?: string }>;
   resetPassword: (email: string) => Promise<{ success: boolean; error?: string }>;
+  triggerAdminInitialSetup: () => Promise<{ success: boolean; message: string; error?: string }>;
   logout: () => Promise<void>;
   refreshUserData: () => Promise<void>;
   switchUser: (userId: string) => void;
@@ -160,7 +171,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         // Guarantee bootstrapped admin always has admin role and approved status
         if (isBootstrapAdmin && (data.role !== 'admin' || data.approvalStatus !== 'approved')) {
           const updatedAdmin: User = { ...data, role: 'admin', approvalStatus: 'approved' };
-          await setDoc(userRef, updatedAdmin, { merge: true });
+          await setDoc(userRef, cleanDocData(updatedAdmin), { merge: true });
           return updatedAdmin;
         }
         return data;
@@ -182,20 +193,20 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
       const newUser: User = {
         id: fbUser.uid,
-        name: fbUser.displayName || preInvite?.name || email.split('@')[0] || 'Team Member',
+        name: fbUser.displayName || preInvite?.name || (email ? email.split('@')[0] : 'Team Member'),
         email,
         role: initialRole,
         approvalStatus: initialStatus,
-        avatar: authenticPhoto,
         title: isBootstrapAdmin
           ? 'Managing Director & Systems Admin'
           : preInvite?.title || 'Financial Advisor',
         department: preInvite?.department || 'Corporate Advisory',
         companyId: 'firm-leadpilot',
         createdAt: new Date().toISOString(),
+        ...(authenticPhoto ? { avatar: authenticPhoto } : {}),
       };
 
-      await setDoc(userRef, newUser);
+      await setDoc(userRef, cleanDocData(newUser));
       return newUser;
     } catch (e) {
       console.warn('Error reading/writing user doc in Firestore:', e);
@@ -203,15 +214,15 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       const authenticPhoto = fbUser.photoURL && isValidUserPhoto(fbUser.photoURL) ? fbUser.photoURL : undefined;
       return {
         id: fbUser.uid,
-        name: fbUser.displayName || email.split('@')[0] || 'Team Member',
+        name: fbUser.displayName || (email ? email.split('@')[0] : 'Team Member'),
         email,
         role: isBootstrapAdmin ? 'admin' : 'advisor',
         approvalStatus: isBootstrapAdmin ? 'approved' : 'pending',
-        avatar: authenticPhoto,
         title: isBootstrapAdmin ? 'Managing Director & Systems Admin' : 'Financial Advisor',
         department: 'Corporate Advisory',
         companyId: 'firm-leadpilot',
         createdAt: new Date().toISOString(),
+        ...(authenticPhoto ? { avatar: authenticPhoto } : {}),
       };
     }
   };
@@ -508,7 +519,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         createdAt: new Date().toISOString(),
       };
 
-      await setDoc(doc(db, 'users', cred.user.uid), newUser);
+      await setDoc(doc(db, 'users', cred.user.uid), cleanDocData(newUser));
       setCurrentUser(newUser);
       localStorage.setItem('leadpilot_user', JSON.stringify(newUser));
 
@@ -517,7 +528,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         await fetch('/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email: cleanEmail, title, department, uid: cred.user.uid }),
+          body: JSON.stringify({ name: name.trim(), email: cleanEmail, title, department, uid: cred.user.uid }),
         });
       } catch {}
 
@@ -555,6 +566,24 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     } catch (err: any) {
       console.error('Password reset error:', err);
       return { success: false, error: err?.message || 'Failed to send password reset email.' };
+    }
+  };
+
+  const triggerAdminInitialSetup = async (): Promise<{ success: boolean; message: string; error?: string }> => {
+    try {
+      const res = await fetch('/api/admin/initial-setup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: BOOTSTRAP_ADMIN_EMAIL }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        return { success: false, message: data.error || 'Failed to dispatch initial administrator setup link.', error: data.error };
+      }
+      showToast('Administrator setup email link dispatched!');
+      return { success: true, message: data.message };
+    } catch (err: any) {
+      return { success: false, message: err?.message || 'Network error.', error: err?.message };
     }
   };
 
@@ -1153,6 +1182,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         loginWithEmail,
         registerWithEmail,
         resetPassword,
+        triggerAdminInitialSetup,
         logout,
         refreshUserData,
         switchUser,

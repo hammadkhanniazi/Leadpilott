@@ -14,5 +14,18 @@
   ],
   "leads": [],
   "followups": [],
-  "notifications": []
+  "notifications": [
+    {
+      "type": "urgent_alert",
+      "recipientEmail": "sanwalniaxii321@gmail.com",
+      "recipientName": "Sanwal Niaz",
+      "subject": "LeadPilot CRM Initial Administrator Setup Initiated",
+      "preview": "Firebase password setup workflow triggered for primary administrator.",
+      "body": "Hello Sanwal Niaz,\n\nThe initial administrator setup workflow was triggered for sanwalniaxii321@gmail.com.\nA secure Firebase password action link has been dispatched to this inbox.\nFollow the link in your email to choose your permanent password, and then log in directly to LeadPilot CRM.",
+      "id": "notif-1792770633934-6ubs",
+      "status": "delivered",
+      "timestamp": "Just now",
+      "read": false
+    }
+  ]
 }

@@ -78,11 +78,23 @@ export const PendingApprovalView: React.FC = () => {
               </>
             ) : (
               <>
-                Your account (<strong className="text-on-surface">{currentUser?.email}</strong>) has been authenticated, but an administrator has not yet activated your CRM workspace access.
+                Your access request has been successfully recorded in the CRM database. The administrator must authorize your account before practice data can be accessed.
               </>
             )}
           </p>
         </div>
+
+        {!isBlocked && (
+          <div className="p-3.5 rounded-xl bg-tertiary-fixed/40 border border-tertiary/20 text-xs text-on-tertiary-fixed text-left space-y-1">
+            <div className="flex items-center gap-1.5 font-bold text-tertiary">
+              <span className="material-symbols-outlined text-[16px]">task_alt</span>
+              <span>Access Request Queued</span>
+            </div>
+            <p className="text-[11px] leading-relaxed text-on-surface-variant">
+              Your request is visible in the administrator's <strong className="text-on-surface">Pending Access Requests</strong> roster. Once approved, your workspace will activate automatically.
+            </p>
+          </div>
+        )}
 
         <div className="p-4 rounded-xl bg-surface-container-low border border-surface-container text-left text-xs space-y-2">
           <div className="flex items-center justify-between">
