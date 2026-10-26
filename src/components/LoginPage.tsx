@@ -6,11 +6,10 @@ export const LoginPage: React.FC = () => {
     loginWithEmail,
     registerWithEmail,
     resetPassword,
-    triggerAdminInitialSetup,
     showToast,
   } = useApp();
 
-  const [mode, setMode] = useState<'signin' | 'reset' | 'request' | 'admin-setup'>('signin');
+  const [mode, setMode] = useState<'signin' | 'reset' | 'request'>('signin');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -53,19 +52,6 @@ export const LoginPage: React.FC = () => {
       setSuccessMessage('Password reset instructions have been sent to your email.');
     } else {
       setErrorMessage(result.error || 'Could not send password reset email.');
-    }
-  };
-
-  const handleAdminSetup = async () => {
-    setErrorMessage(null);
-    setSuccessMessage(null);
-    setIsLoading(true);
-    const res = await triggerAdminInitialSetup();
-    setIsLoading(false);
-    if (res.success) {
-      setSuccessMessage(res.message);
-    } else {
-      setErrorMessage(res.error || 'Could not dispatch administrator setup email.');
     }
   };
 
@@ -227,77 +213,7 @@ export const LoginPage: React.FC = () => {
                 )}
               </button>
 
-              <div className="pt-2 border-t border-surface-container/60">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMode('admin-setup');
-                    setErrorMessage(null);
-                    setSuccessMessage(null);
-                  }}
-                  className="w-full py-2 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-[11px] font-semibold text-on-surface-variant flex items-center justify-between transition-colors group cursor-pointer"
-                >
-                  <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[16px] text-primary">admin_panel_settings</span>
-                    <span>First-Time Administrator Password Setup</span>
-                  </span>
-                  <span className="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform text-outline">
-                    arrow_forward
-                  </span>
-                </button>
-              </div>
             </form>
-          )}
-
-          {/* INITIAL ADMINISTRATOR SETUP WORKFLOW */}
-          {mode === 'admin-setup' && (
-            <div className="space-y-4">
-              <div className="p-3.5 bg-primary-fixed/40 border border-primary/20 rounded-xl space-y-2 text-xs leading-relaxed">
-                <div className="flex items-center gap-2 font-bold text-primary">
-                  <span className="material-symbols-outlined text-[18px]">verified_user</span>
-                  <span>Designated Administrator Setup</span>
-                </div>
-                <p className="text-on-surface-variant">
-                  The designated system administrator email is <strong className="text-on-surface">sanwalniaxii321@gmail.com</strong>.
-                </p>
-                <p className="text-on-surface-variant">
-                  Clicking the button below will dispatch a secure Firebase password action link directly to this verified inbox. Follow that link to create your permanent password, then return here to log in.
-                </p>
-              </div>
-
-              <div className="p-3 bg-surface-container-low rounded-xl text-xs space-y-1.5 border border-surface-container">
-                <div className="flex items-center justify-between">
-                  <span className="text-on-surface-variant">Designated Admin:</span>
-                  <span className="font-semibold text-primary">sanwalniaxii321@gmail.com</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-on-surface-variant">Assigned Role:</span>
-                  <span className="font-semibold text-on-surface">Managing Director & Systems Admin</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-on-surface-variant">Security Mode:</span>
-                  <span className="font-semibold text-tertiary">Direct Firebase One-Time Action Link</span>
-                </div>
-              </div>
-
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={() => setMode('signin')}
-                  className="flex-1 h-10 rounded-xl bg-surface-container text-on-surface text-xs font-semibold hover:bg-surface-container-high transition-colors cursor-pointer"
-                >
-                  Back to Sign In
-                </button>
-                <button
-                  type="button"
-                  onClick={handleAdminSetup}
-                  disabled={isLoading}
-                  className="flex-1 h-10 rounded-xl bg-primary hover:bg-primary-container text-on-primary text-xs font-bold shadow-xs active:scale-95 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60 cursor-pointer"
-                >
-                  {isLoading ? 'Dispatching...' : 'Send Setup Email'}
-                </button>
-              </div>
-            </div>
           )}
 
           {/* PASSWORD RESET FORM */}
